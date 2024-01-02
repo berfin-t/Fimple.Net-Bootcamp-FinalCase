@@ -1,0 +1,12 @@
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\bin\Debug\net7.0\BankSystem.Domain.deps.json
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\bin\Debug\net7.0\BankSystem.Domain.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\bin\Debug\net7.0\BankSystem.Domain.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.csproj.AssemblyReference.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.AssemblyInfoInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.AssemblyInfo.cs
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.csproj.CoreCompileInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\refint\BankSystem.Domain.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Domain.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\ref\BankSystem.Domain.dll
