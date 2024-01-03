@@ -25,7 +25,7 @@ namespace BankSystem.WebApi.JwtTokenOperation
 
             var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, user.UserId),
+            new Claim(ClaimTypes.NameIdentifier, user.UserId),
             new Claim(ClaimTypes.Role, user.Role)
         };
 

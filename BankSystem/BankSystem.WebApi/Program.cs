@@ -18,7 +18,7 @@ builder.Services.AddDbContext<BankingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthorization();
 //builder.Services.AddAuthentication("Bearer").AddJwtBearer();
@@ -33,54 +33,52 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Token:Issuer"],
-            ValidAudience = builder.Configuration["Token:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"]))
+            ValidIssuer = "JwtTokenWithIdentity",
+            ValidAudience = "JwtTokenWithIdentity",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("berfintek")),
+            ClockSkew = TimeSpan.FromMinutes(5)
         };
     });
 
+// Inside ConfigureServices method
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"));
+    options.AddPolicy("UserPolicy", policy => policy.RequireRole("user"));
+});
 
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy(JwtBearerDefaults.AuthenticationScheme, policy =>
-//    {
-//        policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-//        policy.RequireClaim(ClaimTypes.Name);
-//    });
-//});
-
-//builder.Services.AddSwaggerGen(option =>
-//{
-//    option.SwaggerDoc("v1", new OpenApiInfo { Title = "BankSystem Api", Version = "v1" });
-//    option.AddSecurityDefinition(
-//        "Bearer",
-//        new OpenApiSecurityScheme
-//        {
-//            In = ParameterLocation.Header,
-//            Description = "Please enter a valid token",
-//            Name = "Authorization",
-//            Type = SecuritySchemeType.Http,
-//            BearerFormat = "JWT",
-//            Scheme = "Bearer"
-//        }
-//    );
-//    option.AddSecurityRequirement(
-//        new OpenApiSecurityRequirement
-//        {
-//            {
-//                new OpenApiSecurityScheme
-//                {
-//                    Reference = new OpenApiReference
-//                    {
-//                        Type = ReferenceType.SecurityScheme,
-//                        Id = "Bearer"
-//                    }
-//                },
-//                new string[] { }
-//            }
-//        }
-//    );
-//});
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "BankSystem Api", Version = "v1" });
+    option.AddSecurityDefinition(
+        "Bearer",
+        new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter a valid token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "Bearer"
+        }
+    );
+    option.AddSecurityRequirement(
+        new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new string[] { }
+            }
+        }
+    );
+});
 
 builder.Services.AddScoped<JwtToken>();
 
@@ -90,14 +88,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API Name V1");
+    });
+    // app.UseSwaggerUI();
 }
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-//app.MapGet("/secret", (ClaimsPrincipal user) => $"Hello {user.Identity?.Name}. My secret")
-//    .RequireAuthorization();
 
 app.UseHttpsRedirection();
 

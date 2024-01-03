@@ -58,50 +58,51 @@ public class UserController : ControllerBase
         return Ok(new { Token = token });
     }
 
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
     {
-        var user = User.FindFirst(ClaimTypes.Name)?.Value;
+        var user = User.FindFirst(ClaimTypes.Role)?.Value;
 
         //var storedToken = HttpContext.Items["JwtToken"] as string;
-        //var token = HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+        var token = HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
-        //// JWT'yi doğrula ve içeriğini al
-        //var tokenHandler = new JwtSecurityTokenHandler();
-        //var jsonToken = tokenHandler.ReadToken(storedToken) as JwtSecurityToken;
+        // JWT'yi doğrula ve içeriğini al
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var jsonToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
 
-        //// Kullanıcının rollerini kontrol et
-        //var roles = jsonToken?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+        // Kullanıcının rollerini kontrol et
+        var roles = jsonToken?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
 
 
-        //var expirationTime = jsonToken?.ValidTo;
+        var expirationTime = jsonToken?.ValidTo;
 
-        //// Eğer kullanıcının "admin" rolü yoksa erişimi reddet
-        //if (string.IsNullOrEmpty(roles) || !roles.Split(',').Contains("admin"))
-        //{
-        //    return Forbid();
-        //}
+        // Eğer kullanıcının "admin" rolü yoksa erişimi reddet
+        if (string.IsNullOrEmpty(roles) || !roles.Split(',').Contains("admin"))
+        {
+            return Forbid();
+        }
 
         var users = _context.Users.ToList();
         return Ok(users);
+
     }
 
     //[Authorize(Roles = "admin")]
-    [HttpPost("assign-role")]
-    public IActionResult AssignUserRole([FromBody] UserRoleModel model)
-    {
-        var user = _context.Users.Find(model.UserId);
+    //[HttpPost("assign-role")]
+    //public IActionResult AssignUserRole([FromBody] UserRoleModel model)
+    //{
+    //    var user = _context.Users.Find(model.UserId);
 
-        if (user == null)
-        {
-            return NotFound(new { Message = "Kullanıcı bulunamadı." });
-        }
+    //    if (user == null)
+    //    {
+    //        return NotFound(new { Message = "Kullanıcı bulunamadı." });
+    //    }
 
-        user.Role = model.RoleName;
-        _context.SaveChanges();
+    //    user.Role = model.RoleName;
+    //    _context.SaveChanges();
 
-        return Ok(new { Message = "Kullanıcı rolü başarıyla güncellendi." });
-    }
+    //    return Ok(new { Message = "Kullanıcı rolü başarıyla güncellendi." });
+    //}
 
 }
