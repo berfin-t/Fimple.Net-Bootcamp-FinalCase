@@ -1,15 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\FinalCaseProject",
-    "\\FinalCaseProject\\BankSystem.WepApi",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\bin",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\Controllers",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\DbOperations",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\JwtTokenOperation",
-    "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\Models"
+    "\\BankSystem",
+    "\\BankSystem\\BankSystem.WebApi",
+    "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation"
   ],
-  "SelectedNode": "\\FinalCaseProject\\BankSystem.WepApi\\BankSystem\\Models\\UserRoleModel.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation\\JwtToken.cs",
   "PreviewInSolutionExplorer": false
 }

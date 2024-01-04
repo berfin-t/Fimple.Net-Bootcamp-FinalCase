@@ -9,6 +9,11 @@ namespace BankSystem.WebApi.JwtTokenOperation
 {
     public class JwtToken
     {
+        private readonly IConfiguration _config;
+        public JwtToken (IConfiguration config)
+        {
+            _config = config;
+        }
         public string HashPassword(string password)
         {
             using (var sha256 = new SHA256Managed())
@@ -30,11 +35,10 @@ namespace BankSystem.WebApi.JwtTokenOperation
         };
 
             var token = new JwtSecurityToken(
-                issuer: "Token:Issuer",
-                audience: "Token:Audience",
+                _config["Jwt:Issuer"],
+                _config["Jwt:Audience"],
                 claims: claims,
-                signingCredentials: credentials
-            );
+                signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

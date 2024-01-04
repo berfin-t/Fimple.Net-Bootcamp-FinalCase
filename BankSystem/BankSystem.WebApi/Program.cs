@@ -1,13 +1,9 @@
-
+using Microsoft.IdentityModel.Tokens;
 using BankSystem.Persistence.Context;
 using BankSystem.WebApi.JwtTokenOperation;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,11 +14,8 @@ builder.Services.AddDbContext<BankingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthorization();
-//builder.Services.AddAuthentication("Bearer").AddJwtBearer();
-//builder.Services.AddAuthorization();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>
@@ -33,19 +26,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "JwtTokenWithIdentity",
-            ValidAudience = "JwtTokenWithIdentity",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("berfintek")),
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
             ClockSkew = TimeSpan.FromMinutes(5)
         };
     });
-
-// Inside ConfigureServices method
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("admin"));
-    options.AddPolicy("UserPolicy", policy => policy.RequireRole("user"));
-});
 
 builder.Services.AddSwaggerGen(option =>
 {

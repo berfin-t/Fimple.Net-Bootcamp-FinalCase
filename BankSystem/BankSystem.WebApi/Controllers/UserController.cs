@@ -15,11 +15,13 @@ public class UserController : ControllerBase
 {
     private readonly BankingDbContext _context;
     private readonly JwtToken _token;
+    private readonly IConfiguration _config;
 
-    public UserController(BankingDbContext context, JwtToken token)
+    public UserController(BankingDbContext context, JwtToken token, IConfiguration config)
     {
         _context = context;
         _token = token;
+        _config = config;
     }
 
     [HttpPost("register")]
@@ -28,18 +30,12 @@ public class UserController : ControllerBase
         userModel.Password = _token.HashPassword(userModel.Password); 
         _context.Users.Add(userModel);
 
-        //var loginModel = new LoginModel();
-        //loginModel.Username = userModel.Username;
-        //loginModel.Password = userModel.Password;
-        //loginModel.UserId = userModel.UserId;
-        //_context.LoginModels.Add(loginModel);
-
         _context.SaveChanges();
 
         return Ok(new { Message = "Kullanıcı kaydı başarıyla oluşturuldu." });
     }
 
-    
+    [AllowAnonymous]
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginModel model)
     {
@@ -57,27 +53,23 @@ public class UserController : ControllerBase
 
         return Ok(new { Token = token });
     }
-
+    
     [Authorize(Roles = "admin")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
     {
         var user = User.FindFirst(ClaimTypes.Role)?.Value;
 
-        //var storedToken = HttpContext.Items["JwtToken"] as string;
         var token = HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
-        // JWT'yi doğrula ve içeriğini al
         var tokenHandler = new JwtSecurityTokenHandler();
         var jsonToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-
-        // Kullanıcının rollerini kontrol et
+       
         var roles = jsonToken?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
 
 
         var expirationTime = jsonToken?.ValidTo;
 
-        // Eğer kullanıcının "admin" rolü yoksa erişimi reddet
         if (string.IsNullOrEmpty(roles) || !roles.Split(',').Contains("admin"))
         {
             return Forbid();
