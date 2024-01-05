@@ -9,7 +9,6 @@ namespace BankSystem.Domain.Entities
         //public string LoginId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        [JsonIgnore]
         public string UserId { get; set; }
 
         [JsonIgnore]

@@ -1,10 +1,3 @@
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.csproj.AssemblyReference.cache
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.AssemblyInfoInputs.cache
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.AssemblyInfo.cs
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.csproj.CoreCompileInputs.cache
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.MvcApplicationPartsAssemblyInfo.cs
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\appsettings.Development.json
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\appsettings.json
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.WebApi.exe
@@ -17,6 +10,7 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\DocumentFormat.OpenXml.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\DocumentFormat.OpenXml.Framework.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
@@ -67,6 +61,13 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Domain.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Infrastructure.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Persistence.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.csproj.AssemblyReference.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.AssemblyInfoInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.AssemblyInfo.cs
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.csproj.CoreCompileInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.BankSystem.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.build.BankSystem.WebApi.props
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.BankSystem.WebApi.props
@@ -81,4 +82,3 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.genruntimeconfig.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\ref\BankSystem.WebApi.dll
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

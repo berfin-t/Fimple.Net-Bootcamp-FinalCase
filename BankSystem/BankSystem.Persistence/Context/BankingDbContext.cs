@@ -6,8 +6,9 @@ namespace BankSystem.Persistence.Context
     public class BankingDbContext : DbContext
     {
         public DbSet<UserModel> Users { get; set; }
-        public DbSet<LoginModel> LoginModels { get; set; }
-        public DbSet<UserRoleModel> Roles { get; set; }
+        public DbSet<LoginModel> Login { get; set; }
+        public DbSet<AccountModel> Account { get; set; }
+        public DbSet<TransactionModel> Transaction { get; set; }
 
         public BankingDbContext(DbContextOptions<BankingDbContext> options) : base(options)
         {
@@ -17,9 +18,21 @@ namespace BankSystem.Persistence.Context
         {
 
             modelBuilder.Entity<UserModel>()
-                .HasMany(u => u.LoginModels)
+                .HasMany(a => a.LoginModels)
                 .WithOne(a => a.Users)
                 .HasForeignKey(a => a.UserId);
+
+            modelBuilder.Entity<AccountModel>()
+                .HasMany(account => account.Transactions)
+                .WithOne(transaction => transaction.Accounts)
+                .HasForeignKey(transaction => transaction.AccountId);
+
+            modelBuilder.Entity<AccountModel>()
+                .HasOne(account => account.User)
+                .WithMany(user => user.Accounts)
+                .HasForeignKey(account => account.UserId);
+
+            base.OnModelCreating(modelBuilder);
 
         }
         }

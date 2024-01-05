@@ -25,7 +25,7 @@ namespace BankSystem.WebApi.JwtTokenOperation
 
         public string GenerateJwtToken(UserModel user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Token:SecurityKey123456789012345678901234567890"));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>
@@ -38,6 +38,7 @@ namespace BankSystem.WebApi.JwtTokenOperation
                 _config["Jwt:Issuer"],
                 _config["Jwt:Audience"],
                 claims: claims,
+                expires: DateTime.UtcNow.AddDays(3),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

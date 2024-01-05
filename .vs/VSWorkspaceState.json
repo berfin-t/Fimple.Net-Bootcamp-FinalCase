@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\BankSystem",
+    "\\BankSystem\\BankSystem.Persistence",
+    "\\BankSystem\\BankSystem.Persistence\\Context",
     "\\BankSystem\\BankSystem.WebApi",
+    "\\BankSystem\\BankSystem.WebApi\\Controllers",
     "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation\\JwtToken.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.Persistence\\Context\\BankingDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-//[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Route("api/users")]
 [ApiController]
 public class UserController : ControllerBase
@@ -48,13 +47,17 @@ public class UserController : ControllerBase
             return Unauthorized(new { Message = "Geçersiz kullanıcı adı veya şifre." });
         }
 
+        model.Password = _token.HashPassword(model.Password);
+        _context.Login.Add(model);
+        _context.SaveChanges();
+
         var token = _token.GenerateJwtToken(user);
         HttpContext.Items["JwtToken"] = token;
 
         return Ok(new { Token = token });
     }
     
-    [Authorize(Roles = "admin")]
+   [Authorize(Policy = "RequireAdministratorRole")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
     {
@@ -79,22 +82,5 @@ public class UserController : ControllerBase
         return Ok(users);
 
     }
-
-    //[Authorize(Roles = "admin")]
-    //[HttpPost("assign-role")]
-    //public IActionResult AssignUserRole([FromBody] UserRoleModel model)
-    //{
-    //    var user = _context.Users.Find(model.UserId);
-
-    //    if (user == null)
-    //    {
-    //        return NotFound(new { Message = "Kullanıcı bulunamadı." });
-    //    }
-
-    //    user.Role = model.RoleName;
-    //    _context.SaveChanges();
-
-    //    return Ok(new { Message = "Kullanıcı rolü başarıyla güncellendi." });
-    //}
 
 }

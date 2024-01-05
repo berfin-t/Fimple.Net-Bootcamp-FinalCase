@@ -14,9 +14,9 @@ namespace BankSystem.Domain.Entities
         public string Role { get; set; }
 
         [JsonIgnore]
-        public  List<UserRoleModel> UserRoles { get; set; }
-        [JsonIgnore]
         public  List<LoginModel> LoginModels { get; set; }
+        [JsonIgnore]
+        public List<AccountModel> Accounts { get; set; }
  
     }
 }
