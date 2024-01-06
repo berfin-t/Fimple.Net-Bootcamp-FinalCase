@@ -8,6 +8,6 @@
     "\\BankSystem\\BankSystem.WebApi\\Controllers",
     "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.Persistence\\Context\\BankingDbContext.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

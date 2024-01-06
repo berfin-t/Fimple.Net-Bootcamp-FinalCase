@@ -14,13 +14,11 @@ public class UserController : ControllerBase
 {
     private readonly BankingDbContext _context;
     private readonly JwtToken _token;
-    private readonly IConfiguration _config;
 
-    public UserController(BankingDbContext context, JwtToken token, IConfiguration config)
+    public UserController(BankingDbContext context, JwtToken token)
     {
         _context = context;
         _token = token;
-        _config = config;
     }
 
     [HttpPost("register")]
@@ -56,31 +54,32 @@ public class UserController : ControllerBase
 
         return Ok(new { Token = token });
     }
-    
-   [Authorize(Policy = "RequireAdministratorRole")]
+
+    [Authorize(Roles = "admin")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
-    {
-        var user = User.FindFirst(ClaimTypes.Role)?.Value;
-
-        var token = HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var jsonToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
-       
-        var roles = jsonToken?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
-
-
-        var expirationTime = jsonToken?.ValidTo;
-
-        if (string.IsNullOrEmpty(roles) || !roles.Split(',').Contains("admin"))
-        {
-            return Forbid();
-        }
+    {        
 
         var users = _context.Users.ToList();
         return Ok(users);
 
+    }
+
+    [Authorize(Roles = "admin")]
+    [HttpPut("role-assign")]
+    public IActionResult AssignUserRole([FromBody] UserModel model, int userId)
+    {
+        var user = _context.Users.Find(userId);
+
+        if (user == null)
+        {
+            return NotFound(new { Message = "Kullanıcı bulunamadı." });
+        }
+
+        user.Role = model.Role;
+        _context.SaveChanges();
+
+        return Ok(new { Message = "Kullanıcı rolü başarıyla güncellendi." });
     }
 
 }

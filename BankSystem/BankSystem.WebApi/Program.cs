@@ -7,11 +7,17 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using FluentValidation.AspNetCore;
+using BankSystem.Application.Validators;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+
+builder.Services.AddTransient<CreateAccountValidator>();
+
 builder.Services.AddDbContext<BankingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -21,11 +27,11 @@ builder.Services.Configure<IdentityOptions>(options =>
 options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role);
 
 //builder.Services.AddAuthorization();
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("RequireAdministratorRole", policy =>
-    policy.RequireRole("admin"));
-});
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("RequireAdministratorRole", policy =>
+//    policy.RequireRole("admin"));
+//});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>

@@ -82,3 +82,6 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.genruntimeconfig.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\ref\BankSystem.WebApi.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\FluentValidation.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll

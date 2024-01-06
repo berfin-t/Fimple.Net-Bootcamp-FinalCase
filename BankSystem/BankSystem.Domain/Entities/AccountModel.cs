@@ -11,16 +11,15 @@ namespace BankSystem.Domain.Entities
     public class AccountModel
     {
         [Key]
+        [JsonIgnore]
         public int AccountId { get; set; }
         public decimal Balance { get; set; }
-        public string AccountHolderName { get; set; }
-        public string AccountType { get; set; } // e.g., Savings, Checking
+        [JsonIgnore]
+        public string AccountType { get; set; } 
         public DateTime CreatedAt { get; set; }
         [JsonIgnore]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         [JsonIgnore]
         public UserModel User { get; set; }
-        [JsonIgnore]
-        public List<TransactionModel> Transactions { get; set; }
     }
 }
