@@ -18,7 +18,7 @@ namespace BankSystem.Persistence.Context
 
             modelBuilder.Entity<UserModel>()
                 .HasMany(a => a.LoginModels)
-                .WithOne(a => a.Users)
+                .WithOne(a => a.User)
                 .HasForeignKey(a => a.UserId);
 
             modelBuilder.Entity<AccountModel>()

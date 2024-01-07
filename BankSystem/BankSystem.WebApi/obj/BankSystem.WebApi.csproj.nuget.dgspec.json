@@ -30,6 +30,9 @@
             "projectReferences": {
               "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
                 "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+              },
+              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj": {
+                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj"
               }
             }
           }
@@ -44,6 +47,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"

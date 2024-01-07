@@ -9,11 +9,12 @@ namespace BankSystem.Domain.Entities
         [JsonIgnore]
         public int LoginId { get; set; }
         public string Username { get; set; }
+        public string Usersurname { get; set; }
         public string Password { get; set; }
         [JsonIgnore]
         public DateTime LoginDate { get; set; } = DateTime.Now;
         public int UserId { get; set; }
         [JsonIgnore]
-        public UserModel Users { get; set; }
+        public UserModel User { get; set; }
     }
 }

@@ -1,53 +1,48 @@
-﻿using BankSystem.Domain.Entities;
+﻿using AutoMapper;
+using BankSystem.Application.Dto;
+using BankSystem.Application.Repositories;
+using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
 using BankSystem.WebApi.JwtTokenOperation;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
+using BankSystem.Application.Dto;
+using System.Collections;
 
 [Route("api/users")]
 [ApiController]
 public class UserController : ControllerBase
 {
-    private readonly BankingDbContext _context;
+    private readonly UserRepository _userRepository;
     private readonly JwtToken _token;
+    private readonly IMapper _mapper;
 
-    public UserController(BankingDbContext context, JwtToken token)
+    public UserController(IMapper mapper,UserRepository userRepository, JwtToken token)
     {
-        _context = context;
+        _userRepository = userRepository;
         _token = token;
+        _mapper = mapper;
     }
 
     [HttpPost("register")]
-    public IActionResult RegisterUser([FromBody] UserModel userModel)
-    {        
-        userModel.Password = _token.HashPassword(userModel.Password); 
-        _context.Users.Add(userModel);
-
-        _context.SaveChanges();
-
-        return Ok(new { Message = "Kullanıcı kaydı başarıyla oluşturuldu." });
+    public IActionResult RegisterUser([FromBody] UserDto userDto)
+    {
+        _userRepository.AddUser(userDto);
+        return Ok(new { Message = "User registration has been created successfully." });
     }
 
     [AllowAnonymous]
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginModel model)
     {
-        var hashedPassword = _token.HashPassword(model.Password);
-        
-        var user = _context.Users.FirstOrDefault(u => u.Username == model.Username && u.Password == hashedPassword);
+        var user = _userRepository.GetUserByUsernameAndPassword(model.Username, model.Password);
 
         if (user == null)
         {
-            return Unauthorized(new { Message = "Geçersiz kullanıcı adı veya şifre." });
+            return Unauthorized(new { Message = "Invalid username or password." });
         }
 
-        model.Password = _token.HashPassword(model.Password);
-        _context.Login.Add(model);
-        _context.SaveChanges();
+        _userRepository.AddLogin(model);
 
         var token = _token.GenerateJwtToken(user);
         HttpContext.Items["JwtToken"] = token;
@@ -58,28 +53,26 @@ public class UserController : ControllerBase
     [Authorize(Roles = "admin")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
-    {        
-
-        var users = _context.Users.ToList();
-        return Ok(users);
-
+    {
+        var users = _userRepository.GetAllUsers();
+        var userDto = _mapper.Map<IEnumerable<UserDto>>(users);
+        return Ok(userDto);
     }
 
     [Authorize(Roles = "admin")]
     [HttpPut("role-assign")]
     public IActionResult AssignUserRole([FromBody] UserModel model, int userId)
     {
-        var user = _context.Users.Find(userId);
+        var user = _userRepository.GetUserById(userId);
 
         if (user == null)
         {
-            return NotFound(new { Message = "Kullanıcı bulunamadı." });
+            return NotFound(new { Message = "User not found." });
         }
 
-        user.Role = model.Role;
-        _context.SaveChanges();
+        _userRepository.AssignUserRole(userId, model.Role);
 
-        return Ok(new { Message = "Kullanıcı rolü başarıyla güncellendi." });
+        return Ok(new { Message = "The user role has been updated successfully." });
     }
 
 }

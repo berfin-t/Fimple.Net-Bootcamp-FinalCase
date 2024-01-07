@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\BankSystem",
+    "\\BankSystem\\BankSystem.Application",
+    "\\BankSystem\\BankSystem.Application\\Repositories",
     "\\BankSystem\\BankSystem.Persistence",
     "\\BankSystem\\BankSystem.Persistence\\Context",
     "\\BankSystem\\BankSystem.WebApi",
-    "\\BankSystem\\BankSystem.WebApi\\Controllers",
-    "\\BankSystem\\BankSystem.WebApi\\JwtTokenOperation"
+    "\\BankSystem\\BankSystem.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Program.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.Application\\Validators",
   "PreviewInSolutionExplorer": false
 }

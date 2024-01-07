@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using BankSystem.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.Extensions.Configuration;
 
 namespace BankSystem.WebApi.JwtTokenOperation
 {

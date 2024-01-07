@@ -1,8 +1,7 @@
-﻿using BankSystem.Application.Validators;
+﻿using BankSystem.Application.Repositories;
+using BankSystem.Application.Validators;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
-using DocumentFormat.OpenXml.Spreadsheet;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -12,19 +11,19 @@ namespace BankSystem.WebApi.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly BankingDbContext _context;
         private readonly CreateAccountValidator _createValidator;
         private readonly UpdateAccountValidator _updateValidator;
+        private readonly AccountRepository _accountRepository;
 
-        public AccountController(BankingDbContext context, CreateAccountValidator createValidator, UpdateAccountValidator updateValidator)
-        {
-            _context = context;
+        public AccountController(CreateAccountValidator createValidator, UpdateAccountValidator updateValidator, AccountRepository accountRepository)
+        {            
             _createValidator = createValidator;
             _updateValidator = updateValidator;
+            _accountRepository = accountRepository;
         }
 
         [HttpPost("create-account")]
-        public IActionResult CreateAccount(string accountType, [FromBody] AccountModel accountModel)
+        public async Task<IActionResult> CreateAccount(string accountType, [FromBody] AccountModel accountModel)
         {
             var result = _createValidator.Validate(accountModel);
             if (!result.IsValid)
@@ -33,84 +32,54 @@ namespace BankSystem.WebApi.Controllers
             }
 
             var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            int userIdToken = int.Parse(userIdClaim.Value);
-            if (userIdToken == null)
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Forbid();
             }
 
-            var newAccount = new AccountModel
-            {
-                Balance = accountModel.Balance,
-                AccountType = accountType,
-                CreatedAt = DateTime.Now,
-                UserId = userIdToken 
-            };
-
-            _context.Account.Add(newAccount);
-            _context.SaveChanges();
+            await _accountRepository.CreateAccountRepo(accountType, accountModel, this.User);
 
             return Ok(new { Message = "Account created successfully." });
         }
 
         [HttpGet("{accountId}/balance")]
-        public IActionResult GetAccountBalance(int accountId)
+        public async Task<IActionResult> GetAccountBalance(int accountId)
         {
             var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-
-            if (userIdClaim == null)
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Forbid();
             }
 
-            int userId = int.Parse(userIdClaim.Value);
-
-
-            var account = _context.Account.FirstOrDefault(a => a.AccountId == accountId &&  a.UserId == userId);
-            if (account == null)
+            var balance = await _accountRepository.GetAccountBalanceRepo(accountId, userId);
+            if (balance == null)
             {
                 return NotFound(new { Message = "Account not found." });
             }
 
-            return Ok(new { Balance = account.Balance });
-        
+            return Ok(new { Balance = balance });
         }
 
         [HttpPut("{accountId}/deposit-balance")]
-        public IActionResult DepositBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
+        public async Task<IActionResult> DepositBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
         {
-            var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            int userIdToken = int.Parse(userIdClaim.Value);
-            if (userIdToken == null)
-            {
-                return Forbid();
-            }
+            await _accountRepository.DepositBalanceRepo(accountId, changeAmount, this.User);
 
-            model.Balance += changeAmount;
-            _context.SaveChanges();
-
-            return Ok(new { Message = "Balance updated successfully." });
+            return Ok(new { Message = "Balance deposited successfully." });
         }
 
         [HttpPut("{accountId}/withdraw-balance")]
-        public IActionResult WithdrawBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
+        public async Task<IActionResult> WithdrawBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
         {
             var result = _updateValidator.Validate(model);
             if (!result.IsValid)
             {
                 return BadRequest(result.Errors);
             }
-            var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            int userIdToken = int.Parse(userIdClaim.Value);
-            if (userIdToken == null)
-            {
-                return Forbid();
-            }
 
-            model.Balance -= changeAmount;
-            _context.SaveChanges();
+            await _accountRepository.WithdrawBalanceRepo(accountId, model, changeAmount, this.User);
 
-            return Ok(new { Message = "Balance updated successfully." });
+            return Ok(new { Message = "Balance withdrawn successfully." });
         }
     }
 

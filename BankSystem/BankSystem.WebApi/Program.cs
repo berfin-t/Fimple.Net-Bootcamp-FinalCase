@@ -7,9 +7,10 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using FluentValidation.AspNetCore;
 using BankSystem.Application.Validators;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using BankSystem.Application.Repositories;
+using BankSystem.Application.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 builder.Services.AddTransient<CreateAccountValidator>();
+builder.Services.AddScoped<CreateAccountValidator>();
+builder.Services.AddScoped<UpdateAccountValidator>();
+builder.Services.AddScoped<AccountRepository>();
+builder.Services.AddScoped<UserRepository>();
+
+builder.Services.AddAutoMapper(typeof(GeneralProfile));
 
 builder.Services.AddDbContext<BankingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
@@ -25,13 +32,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.Configure<IdentityOptions>(options => 
 options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role);
-
-//builder.Services.AddAuthorization();
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("RequireAdministratorRole", policy =>
-//    policy.RequireRole("admin"));
-//});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>

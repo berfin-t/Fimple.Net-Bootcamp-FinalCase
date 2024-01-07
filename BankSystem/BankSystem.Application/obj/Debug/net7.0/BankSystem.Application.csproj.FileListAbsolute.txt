@@ -13,3 +13,5 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\De
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Domain.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Domain.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Application.csproj.CopyComplete
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Persistence.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Persistence.pdb

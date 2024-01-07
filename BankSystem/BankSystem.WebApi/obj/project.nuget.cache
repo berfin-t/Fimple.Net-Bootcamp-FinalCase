@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oAq5y0lMjmJwS8A4Ccz1gQeY2Dj9S8A3morYhp74UW629A6BK58NRaLevCsGz1JrBEmMCr0amKVsLvQTyZSNlA==",
+  "dgSpecHash": "p5tdXZzL540wlSR76lld1T0AeB/2OmYeqyk9JLGjgNgZymKkqQ6cY9CNOSmG5rAl0zL9UpTQm9GPYISYjBofBQ==",
   "success": true,
   "projectFilePath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\BankSystem.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Berfin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Berfin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\documentformat.openxml\\3.0.0\\documentformat.openxml.3.0.0.nupkg.sha512",
@@ -17,6 +19,7 @@
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
