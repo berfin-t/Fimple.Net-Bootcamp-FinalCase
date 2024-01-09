@@ -14,6 +14,7 @@ namespace BankSystem.Application.Mapping
 
             CreateMap<UserModel, UserDto>().ReverseMap();
             
+            CreateMap<TransactionModel, TransactionDto>().ReverseMap();            
         }
     }
 }

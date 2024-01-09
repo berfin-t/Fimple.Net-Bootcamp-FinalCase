@@ -2,6 +2,7 @@
 using BankSystem.Application.Validators;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -14,12 +15,14 @@ namespace BankSystem.WebApi.Controllers
         private readonly CreateAccountValidator _createValidator;
         private readonly UpdateAccountValidator _updateValidator;
         private readonly AccountRepository _accountRepository;
-
-        public AccountController(CreateAccountValidator createValidator, UpdateAccountValidator updateValidator, AccountRepository accountRepository)
+        private readonly TransactionValidator _transactionValidator;
+        
+        public AccountController(TransactionValidator transactionValidator, CreateAccountValidator createValidator, UpdateAccountValidator updateValidator, AccountRepository accountRepository)
         {            
             _createValidator = createValidator;
             _updateValidator = updateValidator;
             _accountRepository = accountRepository;
+            _transactionValidator = transactionValidator;
         }
 
         [HttpPost("create-account")]
@@ -37,7 +40,7 @@ namespace BankSystem.WebApi.Controllers
                 return Forbid();
             }
 
-            await _accountRepository.CreateAccountRepo(accountType, accountModel, this.User);
+            await _accountRepository.CreateAccountAsync(accountType, accountModel, this.User);
 
             return Ok(new { Message = "Account created successfully." });
         }
@@ -51,7 +54,7 @@ namespace BankSystem.WebApi.Controllers
                 return Forbid();
             }
 
-            var balance = await _accountRepository.GetAccountBalanceRepo(accountId, userId);
+            var balance = await _accountRepository.GetAccountBalanceAsync(accountId, userId);
             if (balance == null)
             {
                 return NotFound(new { Message = "Account not found." });
@@ -61,23 +64,29 @@ namespace BankSystem.WebApi.Controllers
         }
 
         [HttpPut("{accountId}/deposit-balance")]
-        public async Task<IActionResult> DepositBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
+        public async Task<IActionResult> DepositBalance(int accountId, [FromBody] TransactionModel model, decimal changeAmount)
         {
-            await _accountRepository.DepositBalanceRepo(accountId, changeAmount, this.User);
-
-            return Ok(new { Message = "Balance deposited successfully." });
-        }
-
-        [HttpPut("{accountId}/withdraw-balance")]
-        public async Task<IActionResult> WithdrawBalance(int accountId, [FromBody] AccountModel model, decimal changeAmount)
-        {
-            var result = _updateValidator.Validate(model);
+            var result = _transactionValidator.Validate(model);
             if (!result.IsValid)
             {
                 return BadRequest(result.Errors);
             }
 
-            await _accountRepository.WithdrawBalanceRepo(accountId, model, changeAmount, this.User);
+            await _accountRepository.DepositBalanceAsync(accountId, changeAmount, this.User);
+
+            return Ok(new { Message = "Balance deposited successfully." });
+        }
+
+        [HttpPut("{accountId}/withdraw-balance")]
+        public async Task<IActionResult> WithdrawBalance(int accountId, [FromBody] AccountModel accountModel, decimal changeAmount)
+        {
+            var result = _updateValidator.Validate(accountModel);
+            if (!result.IsValid)
+            {
+                return BadRequest(result.Errors);
+            }
+
+            await _accountRepository.WithdrawBalanceAsync(accountId, changeAmount, this.User);
 
             return Ok(new { Message = "Balance withdrawn successfully." });
         }

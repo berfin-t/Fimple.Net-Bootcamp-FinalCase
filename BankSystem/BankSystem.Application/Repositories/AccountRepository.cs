@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using DocumentFormat.OpenXml.InkML;
 
 namespace BankSystem.Application.Repositories
 {
@@ -23,7 +24,7 @@ namespace BankSystem.Application.Repositories
             return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
         }
 
-        public async Task CreateAccountRepo(string accountType, [FromBody] AccountModel accountModel, ClaimsPrincipal user)
+        public async Task CreateAccountAsync(string accountType, [FromBody] AccountModel accountModel, ClaimsPrincipal user)
         {
             var userId = UserIdClaimControl(user);
 
@@ -36,31 +37,73 @@ namespace BankSystem.Application.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DepositBalanceRepo(int accountId, decimal changeAmount, ClaimsPrincipal user)
+        public async Task DepositBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
         {
-            var userId = UserIdClaimControl(user);
+            using var transaction = _context.Database.BeginTransaction();
 
-            var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-            if (account != null)
+            try
             {
-                account.Balance += changeAmount;
-                await _context.SaveChangesAsync();
+                var userId = UserIdClaimControl(user);
+
+                var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
+                if (account != null)
+                {
+                    var depositTransaction = new TransactionModel
+                    {
+                        AccountId = accountId,
+                        Amount = changeAmount,
+                        TransactionType = "Deposit"
+                    };
+
+                    _context.Transaction.Add(depositTransaction);
+                    account.Balance += changeAmount;
+                    await _context.SaveChangesAsync();
+                }
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                throw;
+            }
+
+        }
+
+        public async Task WithdrawBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
+        {
+            using var transaction = _context.Database.BeginTransaction();
+
+            try
+            {
+                var userId = UserIdClaimControl(user);
+
+                var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
+                if (account != null)
+                {
+                    if (account.Balance >= changeAmount)
+                    {
+                        // Log withdrawal transaction
+                        var withdrawalTransaction = new TransactionModel
+                        {
+                            AccountId = accountId,
+                            Amount = changeAmount,
+                            TransactionType = "Withdrawal"
+                        };
+                        _context.Transaction.Add(withdrawalTransaction);
+                        account.Balance -= changeAmount;
+                        await _context.SaveChangesAsync();
+                    }
+                    transaction.Commit();
+                }
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                throw;
             }
         }
 
-        public async Task WithdrawBalanceRepo(int accountId, [FromBody] AccountModel model, decimal changeAmount, ClaimsPrincipal user)
-        {
-            var userId = UserIdClaimControl(user);
-
-            var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-            if (account != null)
-            {
-                account.Balance -= changeAmount;
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public async Task<decimal?> GetAccountBalanceRepo(int accountId, int userId)
+        public async Task<decimal?> GetAccountBalanceAsync(int accountId, int userId)
         {
             var account = await _context.Account
                 .FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);

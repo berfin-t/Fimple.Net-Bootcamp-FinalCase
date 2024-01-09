@@ -18,8 +18,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 builder.Services.AddTransient<CreateAccountValidator>();
-builder.Services.AddScoped<CreateAccountValidator>();
 builder.Services.AddScoped<UpdateAccountValidator>();
+builder.Services.AddScoped<TransactionValidator>();
 builder.Services.AddScoped<AccountRepository>();
 builder.Services.AddScoped<UserRepository>();
 

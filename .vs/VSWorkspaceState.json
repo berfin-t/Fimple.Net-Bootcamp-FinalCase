@@ -9,6 +9,6 @@
     "\\BankSystem\\BankSystem.WebApi",
     "\\BankSystem\\BankSystem.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.Application\\Validators",
+  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
