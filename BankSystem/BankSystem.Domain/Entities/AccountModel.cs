@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BankSystem.Data.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace BankSystem.Domain.Entities
@@ -10,10 +11,12 @@ namespace BankSystem.Domain.Entities
         public int AccountId { get; set; }
         public decimal Balance { get; set; }
         [JsonIgnore]
-        public string AccountType { get; set; } 
+        public AccountType AccountType { get; set; } 
         public DateTime CreatedAt { get; set; }
         [JsonIgnore]
         public int UserId { get; set; }
+
+        //Navigation Properties
         [JsonIgnore]
         public UserModel User { get; set; }
     }

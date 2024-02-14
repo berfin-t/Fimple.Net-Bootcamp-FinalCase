@@ -50,7 +50,7 @@ public class UserController : ControllerBase
         return Ok(new { Token = token });
     }
 
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     [HttpGet("get-all-users")]
     public IActionResult GetAllUsers()
     {
@@ -59,7 +59,7 @@ public class UserController : ControllerBase
         return Ok(userDto);
     }
 
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     [HttpPut("role-assign")]
     public IActionResult AssignUserRole([FromBody] UserModel model, int userId)
     {

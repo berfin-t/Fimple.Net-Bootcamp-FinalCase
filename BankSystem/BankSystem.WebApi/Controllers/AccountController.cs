@@ -3,6 +3,7 @@ using BankSystem.Application.Validators;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -26,6 +27,7 @@ namespace BankSystem.WebApi.Controllers
         }
 
         [HttpPost("create-account")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateAccount(string accountType, [FromBody] AccountModel accountModel)
         {
             var result = _createValidator.Validate(accountModel);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BankSystem.Application.Dto
@@ -15,6 +16,10 @@ namespace BankSystem.Application.Dto
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; } = DateTime.Now;
         public string TransactionType { get; set; }
+
+        //Navigation Properties
+        [JsonIgnore]
+        public AccountDto Account { get; set; }
 
     }
 }

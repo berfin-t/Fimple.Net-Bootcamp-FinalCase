@@ -891,9 +891,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj",
-      "projectName": "BankSystem.Domain",
-      "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj",
+      "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj",
+      "projectName": "BankSystem.Data",
+      "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj",
       "packagesPath": "C:\\Users\\Berfin\\.nuget\\packages\\",
       "outputPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\obj\\",
       "projectStyle": "PackageReference",

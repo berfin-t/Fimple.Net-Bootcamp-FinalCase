@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9JQhsh7h/07w6Dj/6kl1gVzWOSsskrhei/CFcqpSCjfbJ0GV+5tSL4GG/TxE1aoT+65YD/mR+iTG884SxqQN+A==",
+  "dgSpecHash": "gpK982un5uKWLduLMoT0xdlUAZgVeEY+RgpdI/7HYHMtALXtWIaKZe7mMx5XviyllIxDTBxsMj27lek/kPc5Vg==",
   "success": true,
-  "projectFilePath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj",
+  "projectFilePath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Berfin\\.nuget\\packages\\documentformat.openxml\\3.0.0\\documentformat.openxml.3.0.0.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\documentformat.openxml.framework\\3.0.0\\documentformat.openxml.framework.3.0.0.nupkg.sha512",

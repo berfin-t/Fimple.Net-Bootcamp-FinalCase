@@ -5,6 +5,7 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using DocumentFormat.OpenXml.InkML;
+using BankSystem.Data.Enums;
 
 namespace BankSystem.Application.Repositories
 {
@@ -28,8 +29,13 @@ namespace BankSystem.Application.Repositories
         {
             var userId = UserIdClaimControl(user);
 
+            if (!Enum.TryParse<AccountType>(accountType, out var accountTypeEnum))
+            {
+                throw new ArgumentException("Invalid account type", nameof(accountType));
+            }
+
             var newAccount = _mapper.Map<AccountModel>(accountModel);
-            newAccount.AccountType = accountType;
+            newAccount.AccountType = accountTypeEnum;
             newAccount.CreatedAt = DateTime.Now;
             newAccount.UserId = userId;
 

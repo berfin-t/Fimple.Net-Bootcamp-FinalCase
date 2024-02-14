@@ -4,12 +4,12 @@
     "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\BankSystem.WebApi.csproj": {}
   },
   "projects": {
-    "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj": {
+    "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj",
-        "projectName": "BankSystem.Application",
-        "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj",
+        "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj",
+        "projectName": "BankSystem.Business",
+        "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj",
         "packagesPath": "C:\\Users\\Berfin\\.nuget\\packages\\",
         "outputPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
-                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
+                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj"
               },
               "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj": {
                 "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj"
@@ -84,12 +84,12 @@
         }
       }
     },
-    "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
+    "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj",
-        "projectName": "BankSystem.Domain",
-        "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj",
+        "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj",
+        "projectName": "BankSystem.Data",
+        "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj",
         "packagesPath": "C:\\Users\\Berfin\\.nuget\\packages\\",
         "outputPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -228,8 +228,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
-                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
+                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj"
               }
             }
           }
@@ -319,11 +319,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj": {
-                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj"
+              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj": {
+                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj"
               },
-              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
-                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+              "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
+                "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj"
               },
               "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Infrastructure\\BankSystem.Infrastructure.csproj": {
                 "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Infrastructure\\BankSystem.Infrastructure.csproj"

@@ -1,0 +1,17 @@
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Business.deps.json
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Business.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Business.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Data.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Persistence.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Data.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\bin\Debug\net7.0\BankSystem.Persistence.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.csproj.AssemblyReference.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.AssemblyInfoInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.AssemblyInfo.cs
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.csproj.CoreCompileInputs.cache
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.csproj.CopyComplete
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\refint\BankSystem.Business.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\ref\BankSystem.Business.dll

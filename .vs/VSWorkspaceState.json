@@ -4,11 +4,13 @@
     "\\BankSystem",
     "\\BankSystem\\BankSystem.Application",
     "\\BankSystem\\BankSystem.Application\\Repositories",
+    "\\BankSystem\\BankSystem.Application\\Validators",
+    "\\BankSystem\\BankSystem.Infrastructure",
     "\\BankSystem\\BankSystem.Persistence",
     "\\BankSystem\\BankSystem.Persistence\\Context",
     "\\BankSystem\\BankSystem.WebApi",
     "\\BankSystem\\BankSystem.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Program.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

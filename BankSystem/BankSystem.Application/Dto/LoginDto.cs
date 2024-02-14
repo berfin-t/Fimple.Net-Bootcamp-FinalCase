@@ -14,6 +14,6 @@ namespace BankSystem.Application.Dto
         [JsonIgnore]
         public DateTime LoginDate { get; set; } = DateTime.Now;
         [JsonIgnore]
-        public UserDto Users { get; set; }
+        public UserDto User { get; set; }
     }
 }

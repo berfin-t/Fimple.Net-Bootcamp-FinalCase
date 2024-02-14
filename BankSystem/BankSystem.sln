@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0F7A917E-1266-462C-9C23-6EB35C9C862B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.WebApi", "BankSystem.WebApi\BankSystem.WebApi.csproj", "{E66B299E-262F-411B-824A-EAD3B6A4C0C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.WebApi", "BankSystem.WebApi\BankSystem.WebApi.csproj", "{E66B299E-262F-411B-824A-EAD3B6A4C0C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.Application", "BankSystem.Application\BankSystem.Application.csproj", "{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Business", "BankSystem.Application\BankSystem.Business.csproj", "{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.Domain", "BankSystem.Domain\BankSystem.Domain.csproj", "{01398DD0-7F11-4789-A177-B67EDA404BD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Data", "BankSystem.Domain\BankSystem.Data.csproj", "{01398DD0-7F11-4789-A177-B67EDA404BD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.Infrastructure", "BankSystem.Infrastructure\BankSystem.Infrastructure.csproj", "{AD1C5056-9911-4F86-84D5-4C601726FD23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Infrastructure", "BankSystem.Infrastructure\BankSystem.Infrastructure.csproj", "{AD1C5056-9911-4F86-84D5-4C601726FD23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem.Persistence", "BankSystem.Persistence\BankSystem.Persistence.csproj", "{DAC673AF-48E9-4AD7-94F4-FFF9AAB5372E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Persistence", "BankSystem.Persistence\BankSystem.Persistence.csproj", "{DAC673AF-48E9-4AD7-94F4-FFF9AAB5372E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

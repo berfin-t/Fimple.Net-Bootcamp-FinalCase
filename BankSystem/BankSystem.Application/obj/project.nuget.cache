@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ipm8i+w01a/pPRVTI5wl6d9bkk3B7AtnhEHUKZlhf5AuqjVVMh1LOXTzLZioiXi356qWgiEu8tpEOtvxUdltDg==",
+  "dgSpecHash": "VIBT3RQyWTsGUufIyJYMV4Pf/9yquolRaX4WP0qR9SzsQZAELMzzvJ6m9GnLFemPh2HJlMZujtfMQGX29qQOsw==",
   "success": true,
-  "projectFilePath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj",
+  "projectFilePath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Berfin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Berfin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

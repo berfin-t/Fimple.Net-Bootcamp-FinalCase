@@ -15,6 +15,6 @@ namespace BankSystem.Application.Dto
         [JsonIgnore]
         public int UserId { get; set; }
         [JsonIgnore]
-        public UserDto Users { get; set; }
+        public UserDto User { get; set; }
     }
 }

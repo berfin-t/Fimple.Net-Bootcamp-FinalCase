@@ -14,6 +14,8 @@ namespace BankSystem.Domain.Entities
         [JsonIgnore]
         public DateTime LoginDate { get; set; } = DateTime.Now;
         public int UserId { get; set; }
+
+        //Navigation Properties
         [JsonIgnore]
         public UserModel User { get; set; }
     }

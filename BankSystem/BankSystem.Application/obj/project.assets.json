@@ -1305,7 +1305,7 @@
           }
         }
       },
-      "BankSystem.Domain/1.0.0": {
+      "BankSystem.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1313,17 +1313,17 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/BankSystem.Domain.dll": {}
+          "bin/placeholder/BankSystem.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BankSystem.Domain.dll": {}
+          "bin/placeholder/BankSystem.Data.dll": {}
         }
       },
       "BankSystem.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "BankSystem.Domain": "1.0.0",
+          "BankSystem.Data": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0",
@@ -3813,10 +3813,10 @@
         "version.txt"
       ]
     },
-    "BankSystem.Domain/1.0.0": {
+    "BankSystem.Data/1.0.0": {
       "type": "project",
-      "path": "../BankSystem.Domain/BankSystem.Domain.csproj",
-      "msbuildProject": "../BankSystem.Domain/BankSystem.Domain.csproj"
+      "path": "../BankSystem.Domain/BankSystem.Data.csproj",
+      "msbuildProject": "../BankSystem.Domain/BankSystem.Data.csproj"
     },
     "BankSystem.Persistence/1.0.0": {
       "type": "project",
@@ -3828,7 +3828,7 @@
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
-      "BankSystem.Domain >= 1.0.0",
+      "BankSystem.Data >= 1.0.0",
       "BankSystem.Persistence >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.0",
       "FluentValidation.DependencyInjectionExtensions >= 11.9.0"
@@ -3840,9 +3840,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj",
-      "projectName": "BankSystem.Application",
-      "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Application.csproj",
+      "projectUniqueName": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj",
+      "projectName": "BankSystem.Business",
+      "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\BankSystem.Business.csproj",
       "packagesPath": "C:\\Users\\Berfin\\.nuget\\packages\\",
       "outputPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\obj\\",
       "projectStyle": "PackageReference",
@@ -3861,8 +3861,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
-              "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+            "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
+              "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj"
             },
             "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj": {
               "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\BankSystem.Persistence.csproj"

@@ -1310,7 +1310,7 @@
           }
         }
       },
-      "BankSystem.Domain/1.0.0": {
+      "BankSystem.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1318,10 +1318,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/BankSystem.Domain.dll": {}
+          "bin/placeholder/BankSystem.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BankSystem.Domain.dll": {}
+          "bin/placeholder/BankSystem.Data.dll": {}
         }
       }
     }
@@ -3791,15 +3791,15 @@
         "version.txt"
       ]
     },
-    "BankSystem.Domain/1.0.0": {
+    "BankSystem.Data/1.0.0": {
       "type": "project",
-      "path": "../BankSystem.Domain/BankSystem.Domain.csproj",
-      "msbuildProject": "../BankSystem.Domain/BankSystem.Domain.csproj"
+      "path": "../BankSystem.Domain/BankSystem.Data.csproj",
+      "msbuildProject": "../BankSystem.Domain/BankSystem.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "BankSystem.Domain >= 1.0.0",
+      "BankSystem.Data >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
@@ -3836,8 +3836,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj": {
-              "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Domain.csproj"
+            "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj": {
+              "projectPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\BankSystem.Data.csproj"
             }
           }
         }
