@@ -11,48 +11,27 @@ using System.Collections;
 
 [Route("api/users")]
 [ApiController]
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
     private readonly UserRepository _userRepository;
-    private readonly JwtToken _token;
     private readonly IMapper _mapper;
 
-    public UserController(IMapper mapper,UserRepository userRepository, JwtToken token)
+    public UsersController(IMapper mapper,UserRepository userRepository)
     {
         _userRepository = userRepository;
-        _token = token;
         _mapper = mapper;
     }
 
     [HttpPost("register")]
-    public IActionResult RegisterUser([FromBody] UserDto userDto)
+    public async Task<IActionResult> RegisterUser([FromBody] UserDto userDto)
     {
         _userRepository.AddUser(userDto);
         return Ok(new { Message = "User registration has been created successfully." });
-    }
-
-    [AllowAnonymous]
-    [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginModel model)
-    {
-        var user = _userRepository.GetUserByUsernameAndPassword(model.Username, model.Password);
-
-        if (user == null)
-        {
-            return Unauthorized(new { Message = "Invalid username or password." });
-        }
-
-        _userRepository.AddLogin(model);
-
-        var token = _token.GenerateJwtToken(user);
-        HttpContext.Items["JwtToken"] = token;
-
-        return Ok(new { Token = token });
-    }
+    }    
 
     [Authorize(Roles = "Admin")]
     [HttpGet("get-all-users")]
-    public IActionResult GetAllUsers()
+    public async Task<IActionResult> GetAllUsers()
     {
         var users = _userRepository.GetAllUsers();
         var userDto = _mapper.Map<IEnumerable<UserDto>>(users);
@@ -72,7 +51,7 @@ public class UserController : ControllerBase
 
         _userRepository.AssignUserRole(userId, model.Role);
 
-        return Ok(new { Message = "The user role has been updated successfully." });
+        return Ok(new { Message = "The user role updated successfully." });
     }
 
 }

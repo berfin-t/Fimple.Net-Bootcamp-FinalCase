@@ -8,9 +8,9 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using BankSystem.Application.Validators;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using BankSystem.Application.Repositories;
 using BankSystem.Application.Mapping;
+using BankSystem.Business.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +22,8 @@ builder.Services.AddScoped<UpdateAccountValidator>();
 builder.Services.AddScoped<TransactionValidator>();
 builder.Services.AddScoped<AccountRepository>();
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<LoginRepository>();
+builder.Services.AddScoped<TransactionRepository>();
 
 builder.Services.AddAutoMapper(typeof(GeneralProfile));
 

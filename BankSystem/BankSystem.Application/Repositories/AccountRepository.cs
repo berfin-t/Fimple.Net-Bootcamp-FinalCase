@@ -43,71 +43,71 @@ namespace BankSystem.Application.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DepositBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
-        {
-            using var transaction = _context.Database.BeginTransaction();
+        //public async Task DepositBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
+        //{
+        //    using var transaction = _context.Database.BeginTransaction();
 
-            try
-            {
-                var userId = UserIdClaimControl(user);
+        //    try
+        //    {
+        //        var userId = UserIdClaimControl(user);
 
-                var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-                if (account != null)
-                {
-                    var depositTransaction = new TransactionModel
-                    {
-                        AccountId = accountId,
-                        Amount = changeAmount,
-                        TransactionType = "Deposit"
-                    };
+        //        var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
+        //        if (account != null)
+        //        {
+        //            var depositTransaction = new TransactionModel
+        //            {
+        //                AccountId = accountId,
+        //                Amount = changeAmount,
+        //                TransactionType = "Deposit"
+        //            };
 
-                    _context.Transaction.Add(depositTransaction);
-                    account.Balance += changeAmount;
-                    await _context.SaveChangesAsync();
-                }
-                transaction.Commit();
-            }
-            catch (Exception)
-            {
-                transaction.Rollback();
-                throw;
-            }
+        //            _context.Transaction.Add(depositTransaction);
+        //            account.Balance += changeAmount;
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        transaction.Commit();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        transaction.Rollback();
+        //        throw;
+        //    }
 
-        }
+        //}
 
-        public async Task WithdrawBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
-        {
-            using var transaction = _context.Database.BeginTransaction();
+        //public async Task WithdrawBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
+        //{
+        //    using var transaction = _context.Database.BeginTransaction();
 
-            try
-            {
-                var userId = UserIdClaimControl(user);
+        //    try
+        //    {
+        //        var userId = UserIdClaimControl(user);
 
-                var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-                if (account != null)
-                {
-                    if (account.Balance >= changeAmount)
-                    {
-                        // Log withdrawal transaction
-                        var withdrawalTransaction = new TransactionModel
-                        {
-                            AccountId = accountId,
-                            Amount = changeAmount,
-                            TransactionType = "Withdrawal"
-                        };
-                        _context.Transaction.Add(withdrawalTransaction);
-                        account.Balance -= changeAmount;
-                        await _context.SaveChangesAsync();
-                    }
-                    transaction.Commit();
-                }
-            }
-            catch (Exception)
-            {
-                transaction.Rollback();
-                throw;
-            }
-        }
+        //        var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
+        //        if (account != null)
+        //        {
+        //            if (account.Balance >= changeAmount)
+        //            {
+        //                // Log withdrawal transaction
+        //                var withdrawalTransaction = new TransactionModel
+        //                {
+        //                    AccountId = accountId,
+        //                    Amount = changeAmount,
+        //                    TransactionType = "Withdrawal"
+        //                };
+        //                _context.Transaction.Add(withdrawalTransaction);
+        //                account.Balance -= changeAmount;
+        //                await _context.SaveChangesAsync();
+        //            }
+        //            transaction.Commit();
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        transaction.Rollback();
+        //        throw;
+        //    }
+        //}
 
         public async Task<decimal?> GetAccountBalanceAsync(int accountId, int userId)
         {
@@ -115,6 +115,21 @@ namespace BankSystem.Application.Repositories
                 .FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
 
             return account?.Balance;
+        }
+
+        public async Task<AccountModel?> GetAccountById(int accountId)
+        {
+            return _context.Account.Find(accountId);
+        }
+
+        public async Task UpdateBalanceAsync(int accountId, decimal balance)
+        {
+            var account = _context.Account.Find(accountId);
+            if (account != null)
+            {
+                account.Balance = balance;
+                _context.SaveChanges();
+            }
         }
     }
 }

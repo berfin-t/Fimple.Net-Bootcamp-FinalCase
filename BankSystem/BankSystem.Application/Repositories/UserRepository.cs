@@ -23,14 +23,14 @@ namespace BankSystem.Application.Repositories
         {
             var userModel = _mapper.Map<UserModel>(userDto);
             userModel.Password = _token.HashPassword(userModel.Password);
-            _context.Users.Add(userModel);
+            _context.User.Add(userModel);
             _context.SaveChanges();
         }
 
         public UserModel GetUserByUsernameAndPassword(string username, string password)
         {
             var hashedPassword = _token.HashPassword(password);
-            return _context.Users.FirstOrDefault(u => u.Username == username && u.Password == hashedPassword);
+            return _context.User.FirstOrDefault(u => u.Username == username && u.Password == hashedPassword);
         }
 
         public void AddLogin(LoginModel model)
@@ -43,17 +43,17 @@ namespace BankSystem.Application.Repositories
         public IEnumerable<UserModel> GetAllUsers()
         {
 
-            return _context.Users.ToList();
+            return _context.User.ToList();
         }
 
         public UserModel GetUserById(int userId)
         {
-            return _context.Users.Find(userId);
+            return _context.User.Find(userId);
         }
 
         public void AssignUserRole(int userId, string role)
         {
-            var user = _context.Users.Find(userId);
+            var user = _context.User.Find(userId);
 
             if (user != null)
             {

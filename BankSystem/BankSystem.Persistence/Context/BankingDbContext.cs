@@ -5,7 +5,7 @@ namespace BankSystem.Persistence.Context
 {
     public class BankingDbContext : DbContext
     {
-        public DbSet<UserModel> Users { get; set; }
+        public DbSet<UserModel> User { get; set; }
         public DbSet<LoginModel> Login { get; set; }
         public DbSet<AccountModel> Account { get; set; }
         public DbSet<TransactionModel> Transaction { get; set; }
