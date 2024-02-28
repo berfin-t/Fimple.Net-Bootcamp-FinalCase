@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using DocumentFormat.OpenXml.InkML;
 using BankSystem.Data.Enums;
 
 namespace BankSystem.Application.Repositories
@@ -24,95 +23,36 @@ namespace BankSystem.Application.Repositories
             var userIdClaim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
             return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
         }
-
         public async Task CreateAccountAsync(string accountType, [FromBody] AccountModel accountModel, ClaimsPrincipal user)
         {
-            var userId = UserIdClaimControl(user);
+            var userIdClaim = UserIdClaimControl(user);
 
             if (!Enum.TryParse<AccountType>(accountType, out var accountTypeEnum))
             {
                 throw new ArgumentException("Invalid account type", nameof(accountType));
             }
-
             var newAccount = _mapper.Map<AccountModel>(accountModel);
+
             newAccount.AccountType = accountTypeEnum;
             newAccount.CreatedAt = DateTime.Now;
-            newAccount.UserId = userId;
+            newAccount.UserId = userIdClaim;
 
             _context.Account.Add(newAccount);
             await _context.SaveChangesAsync();
-        }
+        }        
 
-        //public async Task DepositBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
-        //{
-        //    using var transaction = _context.Database.BeginTransaction();
-
-        //    try
-        //    {
-        //        var userId = UserIdClaimControl(user);
-
-        //        var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-        //        if (account != null)
-        //        {
-        //            var depositTransaction = new TransactionModel
-        //            {
-        //                AccountId = accountId,
-        //                Amount = changeAmount,
-        //                TransactionType = "Deposit"
-        //            };
-
-        //            _context.Transaction.Add(depositTransaction);
-        //            account.Balance += changeAmount;
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        transaction.Commit();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        transaction.Rollback();
-        //        throw;
-        //    }
-
-        //}
-
-        //public async Task WithdrawBalanceAsync(int accountId, decimal changeAmount, ClaimsPrincipal user)
-        //{
-        //    using var transaction = _context.Database.BeginTransaction();
-
-        //    try
-        //    {
-        //        var userId = UserIdClaimControl(user);
-
-        //        var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-        //        if (account != null)
-        //        {
-        //            if (account.Balance >= changeAmount)
-        //            {
-        //                // Log withdrawal transaction
-        //                var withdrawalTransaction = new TransactionModel
-        //                {
-        //                    AccountId = accountId,
-        //                    Amount = changeAmount,
-        //                    TransactionType = "Withdrawal"
-        //                };
-        //                _context.Transaction.Add(withdrawalTransaction);
-        //                account.Balance -= changeAmount;
-        //                await _context.SaveChangesAsync();
-        //            }
-        //            transaction.Commit();
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        transaction.Rollback();
-        //        throw;
-        //    }
-        //}
-
-        public async Task<decimal?> GetAccountBalanceAsync(int accountId, int userId)
+        public async Task<decimal?> GetAccountBalanceAsync(int accountId, ClaimsPrincipal user)
         {
+            //var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            //if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            //{
+            //    return Forbid();
+            //}
+
+            var userIdClaim = UserIdClaimControl(user);            
+
             var account = await _context.Account
-                .FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
+                .FirstOrDefaultAsync(a => a.AccountId == accountId);
 
             return account?.Balance;
         }
@@ -123,7 +63,7 @@ namespace BankSystem.Application.Repositories
         }
 
         public async Task UpdateBalanceAsync(int accountId, decimal balance)
-        {
+        {          
             var account = _context.Account.Find(accountId);
             if (account != null)
             {

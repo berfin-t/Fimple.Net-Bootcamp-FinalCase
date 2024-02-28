@@ -15,10 +15,11 @@ namespace BankSystem.Domain.Entities
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; } = DateTime.UtcNow;
         public TransactionType TransactionType { get; set; }
+        public int ReceiverAccountId { get; set; }
         public int AccountId { get; set; }
 
         //Navigation Properties
         public AccountModel Account { get; set; }
-
+        
     }
 }

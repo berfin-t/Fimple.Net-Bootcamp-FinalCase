@@ -10,8 +10,9 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\De
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.AssemblyInfoInputs.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.AssemblyInfo.cs
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.csproj.CoreCompileInputs.cache
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.csproj.CopyComplete
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\refint\BankSystem.Business.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\ref\BankSystem.Business.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSystem.Business.sourcelink.json
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Application\obj\Debug\net7.0\BankSyst.7D84F16E.Up2Date

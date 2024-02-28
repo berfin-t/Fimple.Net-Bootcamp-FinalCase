@@ -28,21 +28,26 @@ namespace BankSystem.WebApi.Controllers
             return Ok(new { Message = "Withdraw created successfully." });
         }
 
-        //[HttpPost]
-        //[Route("deposit")]
-        ////DepositAsync
-        //public async Task<IActionResult> DepositAsync()
-        //{
-        //    return Ok();
-        //}
+        [HttpPost]
+        [Route("deposit")]
+        //DepositAsync
+        public async Task<IActionResult> DepositAsync([FromBody] TransactionModel transactionModel,int accountId, decimal changeAmount)
+        {
+            await _transactionRepository.DepositBalanceAsync(transactionModel,accountId, changeAmount);
 
-        //[HttpPost]
-        //[Route("transfer/internal")]
-        ////InternalTransferAsync
-        //public async Task<IActionResult> InternalTransferAsync()
-        //{
-        //    return Ok();
-        //}
+            return Ok(new { Message = "Deposit created successfully." });
+        }
+
+        [HttpPost]
+        [Route("transfer/internal")]
+        //InternalTransferAsync
+        public async Task<IActionResult> InternalTransferAsync(AccountModel accountModel, int accountId, int receiverAccountId, TransactionType transactionType, decimal amount)
+        {
+            await _transactionRepository.InternalTransferAsync(accountModel, accountId,  receiverAccountId,  transactionType,  amount);
+
+            return Ok(new { Message = "Internal transfer created successfully." });
+
+        }
 
         //[HttpPost]
         //[Route("transfer/external")]

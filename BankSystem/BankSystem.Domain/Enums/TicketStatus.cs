@@ -8,8 +8,9 @@ namespace BankSystem.Data.Enums
 {
     public enum TicketStatus
     {
-        InProcess,
-        Open,
+        None, 
+        InProcess, 
+        Open, 
         Closed
     }
 }

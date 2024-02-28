@@ -8,6 +8,7 @@ namespace BankSystem.Data.Enums
 {
     public enum LoanApplicationStatus
     {
+        None,
         Pending,
         Rejected,
         Approved

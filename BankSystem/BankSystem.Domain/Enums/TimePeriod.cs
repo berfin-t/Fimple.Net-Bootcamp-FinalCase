@@ -8,6 +8,7 @@ namespace BankSystem.Data.Enums
 {
     public enum TimePeriod
     {
+        None,
         Minutes,
         Hours,
         Days,

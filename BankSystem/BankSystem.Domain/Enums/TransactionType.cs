@@ -8,6 +8,7 @@ namespace BankSystem.Data.Enums
 {
     public enum TransactionType
     {
+        None,
         Deposit,
         Withdraw,
         InternalTransfer,

@@ -72,7 +72,6 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\staticwebassets.build.json
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\staticwebassets.development.json
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\scopedcss\bundle\BankSystem.WebApi.styles.css
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.csproj.CopyComplete
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\refint\BankSystem.WebApi.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.pdb
@@ -87,3 +86,5 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Data.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Business.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\bin\Debug\net7.0\BankSystem.Data.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSystem.WebApi.sourcelink.json
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.WebApi\obj\Debug\net7.0\BankSyst.2E97BED3.Up2Date

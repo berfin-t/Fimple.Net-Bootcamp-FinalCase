@@ -8,6 +8,7 @@ namespace BankSystem.Data.Enums
 {
     public enum LoanType
     {
+        None,
         Mortgage,
         Vehicle,
         Education,

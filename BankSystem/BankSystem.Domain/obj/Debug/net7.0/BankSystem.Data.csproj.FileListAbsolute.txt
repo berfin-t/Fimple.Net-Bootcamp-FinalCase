@@ -10,3 +10,4 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\n
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\refint\BankSystem.Data.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Data.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\ref\BankSystem.Data.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Domain\obj\Debug\net7.0\BankSystem.Data.sourcelink.json

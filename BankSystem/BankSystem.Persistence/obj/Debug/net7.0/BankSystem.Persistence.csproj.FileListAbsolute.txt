@@ -7,7 +7,6 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\De
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.AssemblyInfoInputs.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.AssemblyInfo.cs
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.csproj.CoreCompileInputs.cache
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.csproj.CopyComplete
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\refint\BankSystem.Persistence.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.pdb
@@ -15,3 +14,5 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\De
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\ref\BankSystem.Persistence.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\bin\Debug\net7.0\BankSystem.Data.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\bin\Debug\net7.0\BankSystem.Data.pdb
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSystem.Persistence.sourcelink.json
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Persistence\obj\Debug\net7.0\BankSyst.53079CCB.Up2Date

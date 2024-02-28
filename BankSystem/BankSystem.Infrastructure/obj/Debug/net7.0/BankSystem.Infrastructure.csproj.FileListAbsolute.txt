@@ -1,7 +1,6 @@
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\bin\Debug\net7.0\BankSystem.Infrastructure.deps.json
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\bin\Debug\net7.0\BankSystem.Infrastructure.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\bin\Debug\net7.0\BankSystem.Infrastructure.pdb
-D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.csproj.AssemblyReference.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.AssemblyInfoInputs.cache
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.AssemblyInfo.cs
@@ -10,3 +9,4 @@ D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\refint\BankSystem.Infrastructure.dll
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.pdb
 D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\ref\BankSystem.Infrastructure.dll
+D:\github\Fimple.Net-Bootcamp-FinalCase\BankSystem\BankSystem.Infrastructure\obj\Debug\net7.0\BankSystem.Infrastructure.sourcelink.json
