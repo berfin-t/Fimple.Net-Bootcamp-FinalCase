@@ -1,23 +1,23 @@
-# .NET 7 ile Geliştirilmiş Bankacılık API'si (Fimple .Net Final Case)
+# Enhanced Banking API with .NET 7 (Fimple .Net Final Case)
 
-## Giriş
-Günümüzde, bankacılık hizmetleri giderek daha fazla dijitalleşmekte ve müşteri beklentileri sürekli olarak evrilmektedir. Bu değişim, bankacılık sistemlerinin güvenli, etkili ve kullanıcı dostu web servisleriyle donatılmasını zorunlu kılmaktadır. Bu proje .NET platformu üzerinde RESTful API'ler geliştirmeyi amaçlamaktadır. 
+## Entrance
+Today, banking services are becoming increasingly digital and customer expectations are constantly evolving. This change requires banking systems to be equipped with secure, effective and user-friendly web services. This project aims to develop RESTful APIs on the .NET platform.
 
-## Özellikler
-- Kullanıcı kaydı ve yönetimi.
-- Hesap işlemleri, bakiye sorgulama ve güncelleme.
-- Para transferleri ve işlem kayıtları.
-- Kredi başvurusu, ödeme planları ve sorgulama.
-- Otomatik ödeme ayarları ve yönetimi.
-- Müşteri destek talepleri ve takibi.
+## Features
+- User registration and management.
+- Account transactions, balance inquiry and update.
+- Money transfers and transaction records.
+- Loan application, payment plans and inquiries.
+- Automatic payment settings and management.
+- Customer support requests and follow-up.
 
-## Teknolojiler
+## Technologies
 - .Net Core
 - SQL Server
-- JWT ile kimlik doğrulama
+- Authentication with JWT
 - Entity Framework
 
-## API Detayları ve Dökümantasyonu
+## API Details and Documentation
 
 ## (Users Controller)
 - Post  /api/users/register : Creates a new user (Admin only).
