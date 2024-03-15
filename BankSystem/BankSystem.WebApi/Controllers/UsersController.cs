@@ -22,6 +22,7 @@ public class UsersController : ControllerBase
         _mapper = mapper;
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost("register")]
     public async Task<IActionResult> RegisterUser([FromBody] UserDto userDto)
     {

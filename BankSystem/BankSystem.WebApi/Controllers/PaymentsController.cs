@@ -10,7 +10,7 @@ namespace BankSystem.WebApi.Controllers
         //[HttpPost]
         //[Route("create-payment")]
         ////CreateAsync
-        //public async Task<IActionResult> CreateAsync()
+        //public async Task<IActionResult> CreatePaymentAsync()
         //{
         //    return Ok();
         //}
@@ -18,7 +18,7 @@ namespace BankSystem.WebApi.Controllers
         //[HttpPut]
         //[Route("id}/update")]
         ////UpdateAsync
-        //public async Task<IActionResult> UpdateAsync()
+        //public async Task<IActionResult> UpdatePaymentAsync()
         //{
         //    return Ok();
         //}
@@ -26,7 +26,7 @@ namespace BankSystem.WebApi.Controllers
         //[HttpDelete]
         //[Route("id/delete")]
         ////DeleteAsync
-        //public async Task<IActionResult> DeleteAsync()
+        //public async Task<IActionResult> DeletePaymentAsync()
         //{
         //    return Ok();
         //}

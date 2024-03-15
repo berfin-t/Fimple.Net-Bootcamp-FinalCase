@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BankSystem.Business.Dto
@@ -19,10 +20,11 @@ namespace BankSystem.Business.Dto
         public int LoanTerm { get; set; }
 
         public LoanApplicationStatus LoanApplicationStatus { get; set; }
-
+        [JsonIgnore]
         public int UserId { get; set; }
 
         //Navigation Properties
+        [JsonIgnore]
         public UserDto User { get; set; }
     }
 }

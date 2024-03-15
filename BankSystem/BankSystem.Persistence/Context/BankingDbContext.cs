@@ -9,6 +9,8 @@ namespace BankSystem.Persistence.Context
         public DbSet<LoginModel> Login { get; set; }
         public DbSet<AccountModel> Account { get; set; }
         public DbSet<TransactionModel> Transaction { get; set; }
+        public DbSet<LoanApplicationModel> LoanApplication { get; set; }
+        public DbSet<LoanModel> Loanl { get; set; }
 
         public BankingDbContext(DbContextOptions<BankingDbContext> options) : base(options)
         {

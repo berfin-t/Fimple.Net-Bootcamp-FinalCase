@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BankSystem.Data.Enums;
 
 namespace BankSystem.Domain.Entities
 {
@@ -12,6 +13,7 @@ namespace BankSystem.Domain.Entities
     {
         public int Id { get; set; }
         public DateTime LoanDate { get; set; }
+        public LoanType LoanType { get; set; }
         public decimal LoanAmount { get; set; }
         public int NumberOfTotalPayments { get; set; }
         public decimal MonthlyPayment => RemainingDebt / LoanTerm;

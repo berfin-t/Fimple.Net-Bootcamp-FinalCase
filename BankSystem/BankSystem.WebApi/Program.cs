@@ -24,6 +24,8 @@ builder.Services.AddScoped<AccountRepository>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<LoginRepository>();
 builder.Services.AddScoped<TransactionRepository>();
+builder.Services.AddScoped<CreditScoreRepository>();
+builder.Services.AddScoped<LoanApplicationRepository>();
 
 builder.Services.AddAutoMapper(typeof(GeneralProfile));
 

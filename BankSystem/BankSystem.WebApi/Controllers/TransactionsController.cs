@@ -49,12 +49,12 @@ namespace BankSystem.WebApi.Controllers
 
         }
 
-        //[HttpPost]
-        //[Route("transfer/external")]
-        ////ExternalTransferAsync
-        //public async Task<IActionResult> ExternalTransferAsync()
-        //{
-        //    return Ok();
-        //}
+        [HttpPost]
+        [Route("transfer/external")]
+        //ExternalTransferAsync
+        public async Task<IActionResult> ExternalTransferAsync(AccountModel accountModel, int accountId, int receiverAccountId, TransactionType transactionType, decimal amount)
+        {
+            return Ok();
+        }
     }
 }

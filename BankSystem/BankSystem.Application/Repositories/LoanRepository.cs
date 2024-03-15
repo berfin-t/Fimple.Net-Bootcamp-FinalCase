@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankSystem.Business.Repositories
 {
-    internal class LoanRepository
+    public class LoanRepository
     {
     }
 }

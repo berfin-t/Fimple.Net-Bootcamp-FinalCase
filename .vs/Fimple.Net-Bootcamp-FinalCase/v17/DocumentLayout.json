@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 30,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -151,79 +126,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateAccountValidator.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.Application\\Validators\\CreateAccountValidator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T20:26:38.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-23T19:16:48.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.Application\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-23T10:13:12.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TransactionModel.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.Domain\\Entities\\TransactionModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-24T18:51:44.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.WebApi\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAFYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-23T20:12:24.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BankSystem\\BankSystem.WebApi\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-23T10:12:41.29Z"
             }
           ]
         },

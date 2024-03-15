@@ -3,7 +3,7 @@
     "",
     "\\BankSystem",
     "\\BankSystem\\BankSystem.Application",
-    "\\BankSystem\\BankSystem.Application\\Validators",
+    "\\BankSystem\\BankSystem.Application\\Repositories",
     "\\BankSystem\\BankSystem.Domain",
     "\\BankSystem\\BankSystem.Domain\\Entities",
     "\\BankSystem\\BankSystem.Infrastructure",
@@ -12,6 +12,6 @@
     "\\BankSystem\\BankSystem.WebApi",
     "\\BankSystem\\BankSystem.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.sln",
+  "SelectedNode": "\\BankSystem\\BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
   "PreviewInSolutionExplorer": false
 }

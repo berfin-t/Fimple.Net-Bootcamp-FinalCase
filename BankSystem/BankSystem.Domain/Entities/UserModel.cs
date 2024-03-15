@@ -13,6 +13,10 @@ namespace BankSystem.Domain.Entities
         public string Email { get; set; }
         public string Role { get; set; }
 
+        public decimal AnnualIncome { get; set; }
+        public decimal TotalAssets { get; set; }
+        public ICollection<LoanModel> Loans { get; set; }
+
         [JsonIgnore]
         public  List<LoginModel> LoginModels { get; set; }
         [JsonIgnore]

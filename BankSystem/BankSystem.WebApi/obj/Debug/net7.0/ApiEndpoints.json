@@ -58,6 +58,78 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
+    "Method": "CreateLoanApplicationAsync",
+    "RelativePath": "api/loanApplications/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loanApplicationModel",
+        "Type": "BankSystem.Domain.Entities.LoanApplicationModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "loanType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "loanApplicationStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
+    "Method": "ApproveApplicationAsync",
+    "RelativePath": "api/loanApplications/id/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "applicationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
+    "Method": "ProcessApplicationAsync",
+    "RelativePath": "api/loanApplications/id/recommendation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
+    "Method": "RejectApplicationAsync",
+    "RelativePath": "api/loanApplications/id/reject",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
+    "Method": "GetLoanApplicationByStatusAsync",
+    "RelativePath": "api/loanApplications/id/status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BankSystem.WebApi.Controllers.LoginController",
     "Method": "Login",
     "RelativePath": "api/Login/login",
@@ -93,6 +165,42 @@
       },
       {
         "Name": "changeAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.TransactionsController",
+    "Method": "ExternalTransferAsync",
+    "RelativePath": "api/transactions/transfer/external",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountModel",
+        "Type": "BankSystem.Domain.Entities.AccountModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "accountId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "receiverAccountId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "transactionType",
+        "Type": "BankSystem.Data.Enums.TransactionType",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
         "Type": "System.Decimal",
         "IsRequired": false
       }

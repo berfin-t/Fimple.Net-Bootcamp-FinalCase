@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BankSystem.Data.Enums;
 
 namespace BankSystem.Application.Dto
 {
@@ -14,6 +15,7 @@ namespace BankSystem.Application.Dto
         public DateTime LoanDate { get; set; }
 
         public decimal LoanAmount { get; set; }
+        public LoanType LoanType { get; set; }
 
         public int NumberOfTotalPayments { get; set; }
 

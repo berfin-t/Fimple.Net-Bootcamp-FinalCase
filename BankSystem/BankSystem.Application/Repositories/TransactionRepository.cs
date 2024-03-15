@@ -3,6 +3,7 @@ using BankSystem.Application.Dto;
 using BankSystem.Data.Enums;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -34,16 +35,10 @@ namespace BankSystem.Business.Repositories
             using var transaction = _context.Database.BeginTransaction();
 
             try
-            {
-                //var userId = UserIdClaimControl(user);
-
-                //var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId && a.UserId == userId);
-                //if (account != null)
-                //{
+            {                
                 var account = _context.Account.FirstOrDefault(a => a.AccountId == accountId);
                 if (account.Balance >= changeAmount)
                 {
-                    // Log withdrawal transaction
                     var withdrawalTransaction = new TransactionModel
                     {
                         AccountId = accountId,
@@ -69,11 +64,8 @@ namespace BankSystem.Business.Repositories
 
             try
             {
-                //var userId = UserIdClaimControl(user);
-
                 var account = _context.Account.FirstOrDefault(a => a.AccountId == accountId);
-                //if (account != null)
-                //{
+
                 var depositTransaction = new TransactionModel
                 {
                     AccountId = accountId,
@@ -100,40 +92,100 @@ namespace BankSystem.Business.Repositories
 
             try
             {
-                var limit = transactionType == TransactionType.InternalTransfer ? LimitPerInternalTransfer : LimitPerExternalTransfer;
-                var dailyLimit = transactionType == TransactionType.InternalTransfer ? DailyInternalTransferLimit : DailyExternalTransferLimit;
+                var senderAccount = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId);
+                var receiverAccount = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == receiverAccountId);
+
+                if (senderAccount == null || receiverAccount == null)
+                    throw new InvalidOperationException("One or both accounts not found.");
+
+                if (senderAccount.Balance < amount)
+                    throw new InvalidOperationException("Insufficient balance.");
+
+                var limit = LimitPerInternalTransfer;
+                var dailyLimit = DailyInternalTransferLimit;
 
                 if (amount > limit)
                     throw new InvalidOperationException($"This operation exceeds the transfer limit of ${limit} per transfer.");
+
                 if (amount > dailyLimit)
                     throw new InvalidOperationException($"This operation exceeds the daily transfer limit of {dailyLimit}.");
 
-                var account = _context.Account.FirstOrDefault(a => a.AccountId == accountId);
-
-                //var senderAccount = account.AccountId;
-                //var receiverAccount = account.ReceiverAccountId;
 
                 var internalTransfer = new TransactionModel
                 {
                     AccountId = accountId,
-                    Amount = amount,
                     ReceiverAccountId = receiverAccountId,
+                    Amount = amount,
                     TransactionType = TransactionType.InternalTransfer
                 };
 
                 _context.Transaction.Add(internalTransfer);
-                account.Balance += amount;
-                _context.SaveChanges();
+                senderAccount.Balance -= amount;
+                receiverAccount.Balance += amount;
+
+                await _context.SaveChangesAsync();
+                transaction.Commit();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 transaction.Rollback();
                 throw;
-
             }
-            
 
         }
+
+        public async Task ExternalTransferAsync(AccountModel accountModel, int accountId, int receiverAccountId, TransactionType transactionType, decimal amount)
+        {
+            using var transaction = _context.Database.BeginTransaction();
+
+            try
+            {
+                var senderAccount = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId);
+
+                if (senderAccount == null)
+                    throw new InvalidOperationException("Sender account not found.");
+
+                if (senderAccount.Balance < amount)
+                    throw new InvalidOperationException("Insufficient balance.");
+
+                // Assuming there is a method to retrieve receiver account details based on the account number
+                var receiverAccount = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == receiverAccountId);
+
+                if (receiverAccount == null)
+                    throw new InvalidOperationException("Receiver account not found.");
+
+                // Check external transfer limits
+                var limit = LimitPerExternalTransfer;
+                var dailyLimit = DailyExternalTransferLimit;
+
+                if (amount > limit)
+                    throw new InvalidOperationException($"This operation exceeds the transfer limit of ${limit} per transfer.");
+
+                if (amount > dailyLimit)
+                    throw new InvalidOperationException($"This operation exceeds the daily transfer limit of {dailyLimit}.");
+
+                // Perform the external transfer
+                var externalTransfer = new TransactionModel
+                {
+                    AccountId = accountId,
+                    ReceiverAccountId = receiverAccountId,
+                    Amount = amount,
+                    TransactionType = TransactionType.ExternalTransfer
+                };
+
+                _context.Transaction.Add(externalTransfer);
+                senderAccount.Balance -= amount;
+
+                await _context.SaveChangesAsync();
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                throw;
+            }
+        }
+
     }
 }
 
