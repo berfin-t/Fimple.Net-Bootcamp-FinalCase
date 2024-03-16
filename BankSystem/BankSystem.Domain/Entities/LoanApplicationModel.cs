@@ -15,10 +15,8 @@ namespace BankSystem.Domain.Entities
         public int Id { get; set; }
         [JsonIgnore]
         public LoanType LoanType { get; set; }
-
         public decimal LoanAmount { get; set; }
         public DateTime CreatedAt { get; set; }
-
         public int LoanTerm { get; set; }
         [JsonIgnore]
         public LoanApplicationStatus LoanApplicationStatus { get; set; }

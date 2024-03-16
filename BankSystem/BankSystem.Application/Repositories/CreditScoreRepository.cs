@@ -27,7 +27,7 @@ namespace BankSystem.Business.Repositories
         private const int VehicleLoanScore = 20;
         private const int SmallBusinessLoanScore = 35;
 
-        public decimal CalculateCreditScore(UserModel userModel)
+        public decimal CalculateCreditScore(UserModel userModel, List<LoanModel> loans)
         {
             var incomeScore = userModel.AnnualIncome / ThousandDollars * IncomeScoreMultiplier;
             var totalAssetsScore = userModel.TotalAssets / ThousandDollars * AssetScoreMultiplier;
@@ -36,9 +36,9 @@ namespace BankSystem.Business.Repositories
             decimal remainingDebtBurdenScore = 0;
             decimal paymentPerformanceScore = 0;
 
-            if (userModel.Loans.Any())
+            if (loans.Any())
             {
-                foreach (var userLoan in userModel.Loans)
+                foreach (var userLoan in loans)
                 {
                     switch (userLoan.LoanType)
                     {
@@ -63,7 +63,7 @@ namespace BankSystem.Business.Repositories
                 }
             }
 
-            var loansStartedToBePaid = userModel.Loans.Where(loan => loan.NumberOfTotalPayments > 0).ToList();
+            var loansStartedToBePaid = loans.Where(loan => loan.NumberOfTotalPayments > 0).ToList();
 
             if (loansStartedToBePaid.Any())
             {

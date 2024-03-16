@@ -24,7 +24,7 @@ namespace BankSystem.Domain.Entities
         public int NumberOfTimelyPayments { get; set; }
         public DateTime LastPaymentDate { get; set; }
         public DateTime NextPaymentDueDate { get; set; }
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         //Navigation Properties
         public UserModel User { get; set; }

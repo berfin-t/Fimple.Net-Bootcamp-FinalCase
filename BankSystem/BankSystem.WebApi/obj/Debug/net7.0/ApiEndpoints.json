@@ -60,7 +60,7 @@
   {
     "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
     "Method": "CreateLoanApplicationAsync",
-    "RelativePath": "api/loanApplications/create",
+    "RelativePath": "api/loanApplications/create-loan",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

@@ -24,7 +24,7 @@ namespace BankSystem.WebApi.Controllers
         // CreateLoanApplicationAsync
         public async Task<IActionResult> CreateLoanApplicationAsync([FromBody] LoanApplicationModel loanApplicationModel, string loanType, string loanApplicationStatus)
         {
-            await _loanApplicationRepository.CreateAsync(loanApplicationModel, loanType, loanApplicationStatus);
+            await _loanApplicationRepository.CreateAsync(loanApplicationModel, loanType, loanApplicationStatus, this.User);
 
             return Ok(new { Message = "Loan Application created successfully" });
         }

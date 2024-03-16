@@ -16,6 +16,7 @@ namespace BankSystem.Business.Dto
         public LoanType LoanType { get; set; }
 
         public decimal LoanAmount { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         public int LoanTerm { get; set; }
 

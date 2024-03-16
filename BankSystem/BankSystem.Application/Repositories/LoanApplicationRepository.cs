@@ -4,10 +4,13 @@ using BankSystem.Data.Enums;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
 using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,17 +20,27 @@ namespace BankSystem.Business.Repositories
     {
         private readonly BankingDbContext _context;
         private readonly IMapper _mapper;
-        private readonly CreditScoreRepository creditScoreRepository;
+        private readonly CreditScoreRepository _creditScoreRepository;
 
-        public LoanApplicationRepository(BankingDbContext context, IMapper mapper, CreditScoreRepository creditScoreRepository)
+        public LoanApplicationRepository(BankingDbContext context, 
+            IMapper mapper,
+            CreditScoreRepository creditScoreRepository
+            )
         {
             _context = context;
             _mapper = mapper;
-            this.creditScoreRepository = creditScoreRepository;
+            _creditScoreRepository = creditScoreRepository;
+        }
+        private int UserIdClaimControl(ClaimsPrincipal user)
+        {
+            var userIdClaim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
         }
 
-        public async Task CreateAsync(LoanApplicationModel loanApplicationModel, string loanType, string loanApplicationStatus)
+        public async Task CreateAsync(LoanApplicationModel loanApplicationModel, string loanType, string loanApplicationStatus, ClaimsPrincipal user)
         {
+            var userIdClaim = UserIdClaimControl(user);
+
             if (!Enum.TryParse<LoanType>(loanType, out var loanTypeEnum))
             {
                 throw new ArgumentException("Invalid account type", nameof(loanType));
@@ -39,17 +52,21 @@ namespace BankSystem.Business.Repositories
             var newLoanApplication = _mapper.Map<LoanApplicationModel>(loanApplicationModel);
             newLoanApplication.LoanType = loanTypeEnum;
             newLoanApplication.LoanApplicationStatus = loanApplicationStatusEnum;
+            newLoanApplication.UserId = userIdClaim;
 
             _context.LoanApplication.Add(newLoanApplication);
             await _context.SaveChangesAsync();
         }
 
         public async Task ApproveApplicationAsync(int aplicationId)
-        {
+        {          
+
             var application = _context.LoanApplication.FirstOrDefault(a => a.Id == aplicationId);
-           
-            decimal requiredCreditScore = creditScoreRepository.CalculateMinimumRequiredCreditScoreForLoanApplication(application);
-            decimal userCreditScore = creditScoreRepository.CalculateCreditScore(application.User);
+            var user = _context.User.FirstOrDefault(a => a.UserId == application.UserId);
+            var loans = _context.Loan.Where(a => a.UserId == user.UserId).ToList();
+
+            decimal requiredCreditScore = _creditScoreRepository.CalculateMinimumRequiredCreditScoreForLoanApplication(application);
+            decimal userCreditScore = _creditScoreRepository.CalculateCreditScore(user, loans);
 
             if (userCreditScore >= requiredCreditScore)
             {

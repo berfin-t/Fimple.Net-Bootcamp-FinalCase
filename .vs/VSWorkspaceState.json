@@ -12,6 +12,6 @@
     "\\BankSystem\\BankSystem.WebApi",
     "\\BankSystem\\BankSystem.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\BankSystem\\BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
+  "SelectedNode": "\\BankSystem\\BankSystem.WebApi\\Controllers\\LoanApplicationsController.cs",
   "PreviewInSolutionExplorer": false
 }

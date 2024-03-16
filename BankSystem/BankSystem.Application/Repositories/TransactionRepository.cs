@@ -35,8 +35,10 @@ namespace BankSystem.Business.Repositories
             using var transaction = _context.Database.BeginTransaction();
 
             try
-            {                
+            {   
+               
                 var account = _context.Account.FirstOrDefault(a => a.AccountId == accountId);
+
                 if (account.Balance >= changeAmount)
                 {
                     var withdrawalTransaction = new TransactionModel

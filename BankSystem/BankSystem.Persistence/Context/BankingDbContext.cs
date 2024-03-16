@@ -10,7 +10,7 @@ namespace BankSystem.Persistence.Context
         public DbSet<AccountModel> Account { get; set; }
         public DbSet<TransactionModel> Transaction { get; set; }
         public DbSet<LoanApplicationModel> LoanApplication { get; set; }
-        public DbSet<LoanModel> Loanl { get; set; }
+        public DbSet<LoanModel> Loan { get; set; }
 
         public BankingDbContext(DbContextOptions<BankingDbContext> options) : base(options)
         {
@@ -28,6 +28,16 @@ namespace BankSystem.Persistence.Context
                 .HasOne(account => account.User)
                 .WithMany(user => user.Accounts)
                 .HasForeignKey(account => account.UserId);
+
+            modelBuilder.Entity<LoanApplicationModel>()
+                .HasOne(l => l.User)
+                .WithMany(user => user.LoanApplications)
+                .HasForeignKey(l => l.UserId);
+
+            modelBuilder.Entity<LoanModel>()
+                .HasOne(l => l.User)
+                .WithMany(user => user.Loans)
+                .HasForeignKey(l => l.UserId);
 
             base.OnModelCreating(modelBuilder);
 
