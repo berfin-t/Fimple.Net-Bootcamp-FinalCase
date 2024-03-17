@@ -8,8 +8,9 @@ Today, banking services are becoming increasingly digital and customer expectati
 - Account transactions, balance inquiry and update.
 - Money transfers and transaction records.
 - Loan application, payment plans and inquiries.
-- Automatic payment settings and management.
-- Customer support requests and follow-up.
+
+  <img src=".png"
+     width=50% />
 
 ## Technologies
 - .Net Core
@@ -37,3 +38,7 @@ Today, banking services are becoming increasingly digital and customer expectati
 - Post   /api/transactions/deposit : Deposit money into the account.
 - Post   /api/transactions/transfer/internal : Internal transfer between accounts.
 - Post   /api/transactions/transfer/external : External transfer between accounts.
+
+## (LoanApplications Controller)
+- Post   /api/loanApplications/create-loan : Creates a new loan application.
+- Post   /api/loanApplications/{id}/approve : Approves a specific loan application and creates a loan (Admin Only).
