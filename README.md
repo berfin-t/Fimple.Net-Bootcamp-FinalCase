@@ -9,7 +9,7 @@ Today, banking services are becoming increasingly digital and customer expectati
 - Money transfers and transaction records.
 - Loan application, payment plans and inquiries.
 
-  <img src=".png"
+  <img src="readme-ss.png"
      width=50% />
 
 ## Technologies
