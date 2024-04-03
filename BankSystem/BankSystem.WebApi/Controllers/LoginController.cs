@@ -20,7 +20,6 @@ namespace BankSystem.WebApi.Controllers
             _loginRepository = loginRepository;
         }
 
-        //jwt token controle
         [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)

@@ -32,7 +32,6 @@ namespace BankSystem.WebApi.Controllers
         [HttpPost]
         [Route("id/approve")]
         [Authorize(Roles = "Admin")]
-        //ApproveApplicationAsync
         public async Task<IActionResult> ApproveApplicationAsync(int applicationId)
         {
             await _loanApplicationRepository.ApproveApplicationAsync(applicationId);
@@ -42,29 +41,30 @@ namespace BankSystem.WebApi.Controllers
 
         [HttpGet]
         [Route("id/status")]
-        // getloanapplicationbystatusasync
-        public async Task<IActionResult> GetLoanApplicationByStatusAsync()
+        public async Task<IActionResult> GetLoanApplicationByStatusAsync(int statusId)
         {
-            return Ok();
+            var status = await _loanApplicationRepository.GetLoanApplicationByStatusAsync(statusId);
+
+            return Ok(new { LoanApplicationStatus = status });
         }
 
-        [HttpGet]
-        [Route("id/recommendation")]
-        [Authorize(Roles = "Admin,Auditor")]
-        //ProcessApplicationAsync
-        public async Task<IActionResult> ProcessApplicationAsync()
-        {
-            return Ok();
-        }
+        //[HttpGet]
+        //[Route("id/recommendation")]
+        //[Authorize(Roles = "Admin,Auditor")]
+        ////ProcessApplicationAsync
+        //public async Task<IActionResult> ProcessApplicationAsync()
+        //{
+        //    return Ok();
+        //}
 
-        [HttpPut]
-        [Route("id/reject")]
-        [Authorize(Roles = "Admin")]
-        //RejectApplicationAsync
-        public async Task<IActionResult> RejectApplicationAsync()
-        {
-            return Ok();
-        }
+        //[HttpPut]
+        //[Route("id/reject")]
+        //[Authorize(Roles = "Admin")]
+        ////RejectApplicationAsync
+        //public async Task<IActionResult> RejectApplicationAsync()
+        //{
+        //    return Ok();
+        //}
     }
 
 }

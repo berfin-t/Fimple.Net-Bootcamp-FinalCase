@@ -1,4 +1,5 @@
-﻿using BankSystem.Domain.Entities;
+﻿using BankSystem.Data.Entities;
+using BankSystem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankSystem.Persistence.Context
@@ -11,9 +12,11 @@ namespace BankSystem.Persistence.Context
         public DbSet<TransactionModel> Transaction { get; set; }
         public DbSet<LoanApplicationModel> LoanApplication { get; set; }
         public DbSet<LoanModel> Loan { get; set; }
+        public DbSet<PaymentModel> Payment { get; set; }
 
         public BankingDbContext(DbContextOptions<BankingDbContext> options) : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,6 +41,11 @@ namespace BankSystem.Persistence.Context
                 .HasOne(l => l.User)
                 .WithMany(user => user.Loans)
                 .HasForeignKey(l => l.UserId);
+
+            modelBuilder.Entity<PaymentModel>()
+                .HasOne(l => l.Accounts)
+                .WithMany(a => a.Payments)
+                .HasForeignKey(l => l.AccountId);
 
             base.OnModelCreating(modelBuilder);
 

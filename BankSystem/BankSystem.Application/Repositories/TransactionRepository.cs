@@ -1,15 +1,8 @@
 ﻿using AutoMapper;
-using BankSystem.Application.Dto;
 using BankSystem.Data.Enums;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankSystem.Business.Repositories
 {
@@ -23,12 +16,10 @@ namespace BankSystem.Business.Repositories
         public const decimal LimitPerDepositAndWithdraw = 20000;
 
         private readonly BankingDbContext _context;
-        private readonly IMapper _mapper;
 
-        public TransactionRepository(BankingDbContext context, IMapper mapper)
+        public TransactionRepository(BankingDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
         public async Task WithdrawAsync(TransactionModel transactionModel, int accountId, decimal changeAmount)
         {

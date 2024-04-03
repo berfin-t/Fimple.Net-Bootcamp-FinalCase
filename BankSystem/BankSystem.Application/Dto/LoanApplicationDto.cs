@@ -14,12 +14,9 @@ namespace BankSystem.Business.Dto
     {
         public int Id { get; set; }
         public LoanType LoanType { get; set; }
-
         public decimal LoanAmount { get; set; }
         public DateTime CreatedAt { get; set; }
-
         public int LoanTerm { get; set; }
-
         public LoanApplicationStatus LoanApplicationStatus { get; set; }
         [JsonIgnore]
         public int UserId { get; set; }

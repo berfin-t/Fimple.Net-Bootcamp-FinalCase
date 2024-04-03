@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "BankSystem.WebApi.Controllers.AccountsController",
+    "Method": "LoanPayment",
+    "RelativePath": "api/accounts/accountId/loan-payment",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.AccountsController",
     "Method": "CreateAccountAsync",
     "RelativePath": "api/accounts/create-account",
     "HttpMethod": "POST",
@@ -101,32 +122,18 @@
   },
   {
     "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
-    "Method": "ProcessApplicationAsync",
-    "RelativePath": "api/loanApplications/id/recommendation",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
-    "Method": "RejectApplicationAsync",
-    "RelativePath": "api/loanApplications/id/reject",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BankSystem.WebApi.Controllers.LoanApplicationsController",
     "Method": "GetLoanApplicationByStatusAsync",
     "RelativePath": "api/loanApplications/id/status",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "statusId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -141,6 +148,48 @@
         "Name": "model",
         "Type": "BankSystem.Domain.Entities.LoginModel",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.PaymentsController",
+    "Method": "CreatePaymentAsync",
+    "RelativePath": "api/payments/create-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentModel",
+        "Type": "BankSystem.Data.Entities.PaymentModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "timePeriod",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankSystem.WebApi.Controllers.PaymentsController",
+    "Method": "UpdatePaymentAsync",
+    "RelativePath": "api/payments/id/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "BankSystem.Data.Entities.PaymentModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "paymentId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

@@ -1,18 +1,8 @@
 ﻿using AutoMapper;
-using BankSystem.Application.Dto;
 using BankSystem.Data.Enums;
 using BankSystem.Domain.Entities;
 using BankSystem.Persistence.Context;
-using DocumentFormat.OpenXml.Spreadsheet;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankSystem.Business.Repositories
 {
@@ -41,10 +31,10 @@ namespace BankSystem.Business.Repositories
         {
             var userIdClaim = UserIdClaimControl(user);
 
-            if (!Enum.TryParse<LoanType>(loanType, out var loanTypeEnum))
-            {
-                throw new ArgumentException("Invalid account type", nameof(loanType));
-            }
+                if (!Enum.TryParse<LoanType>(loanType, out var loanTypeEnum))
+                {
+                    throw new ArgumentException("Invalid account type", nameof(loanType));
+                }
             if (!Enum.TryParse<LoanApplicationStatus>(loanApplicationStatus, out var loanApplicationStatusEnum))
             {
                 throw new ArgumentException("Invalid account type", nameof(loanApplicationStatus));
@@ -81,9 +71,9 @@ namespace BankSystem.Business.Repositories
 
         }
 
-            public async Task GetLoanApplicationByStatusAsync()
+        public async Task<LoanApplicationModel?> GetLoanApplicationByStatusAsync(int statusId)
         {
-
+            return _context.LoanApplication.Find(statusId);
         }
 
         public async Task ProcessApplicationAsync()

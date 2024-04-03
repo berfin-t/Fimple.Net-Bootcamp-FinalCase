@@ -20,7 +20,6 @@ namespace BankSystem.WebApi.Controllers
 
         [HttpPost]
         [Route("withdraw")]
-        //WithdrawAsync
         public async Task<IActionResult> WithdrawBalanceAsync([FromBody] TransactionModel transactionModel, int accountId, decimal changeAmount)
         {
             await _transactionRepository.WithdrawAsync(transactionModel, accountId, changeAmount);
@@ -30,7 +29,6 @@ namespace BankSystem.WebApi.Controllers
 
         [HttpPost]
         [Route("deposit")]
-        //DepositAsync
         public async Task<IActionResult> DepositAsync([FromBody] TransactionModel transactionModel,int accountId, decimal changeAmount)
         {
             await _transactionRepository.DepositBalanceAsync(transactionModel,accountId, changeAmount);
@@ -40,7 +38,6 @@ namespace BankSystem.WebApi.Controllers
 
         [HttpPost]
         [Route("transfer/internal")]
-        //InternalTransferAsync
         public async Task<IActionResult> InternalTransferAsync(AccountModel accountModel, int accountId, int receiverAccountId, TransactionType transactionType, decimal amount)
         {
             await _transactionRepository.InternalTransferAsync(accountModel, accountId,  receiverAccountId,  transactionType,  amount);
@@ -51,7 +48,6 @@ namespace BankSystem.WebApi.Controllers
 
         [HttpPost]
         [Route("transfer/external")]
-        //ExternalTransferAsync
         public async Task<IActionResult> ExternalTransferAsync(AccountModel accountModel, int accountId, int receiverAccountId, TransactionType transactionType, decimal amount)
         {
             return Ok();

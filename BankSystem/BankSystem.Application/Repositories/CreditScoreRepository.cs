@@ -1,10 +1,4 @@
 ﻿using BankSystem.Data.Enums;
-using DocumentFormat.OpenXml.Spreadsheet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BankSystem.Domain.Entities;
 
 namespace BankSystem.Business.Repositories

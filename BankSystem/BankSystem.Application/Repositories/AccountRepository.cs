@@ -43,12 +43,6 @@ namespace BankSystem.Application.Repositories
 
         public async Task<decimal?> GetAccountBalanceAsync(int accountId, ClaimsPrincipal user)
         {
-            //var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            //if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
-            //{
-            //    return Forbid();
-            //}
-
             var userIdClaim = UserIdClaimControl(user);            
 
             var account = await _context.Account
@@ -68,6 +62,18 @@ namespace BankSystem.Application.Repositories
             if (account != null)
             {
                 account.Balance = balance;
+                _context.SaveChanges();
+            }
+        }
+
+        public async Task LoanPaymentAsync(int accountId, decimal amount)
+        {
+            var account = _context.Account.Find(accountId);
+            //var loan = _context.Loan.Find(loanId);
+            if (account != null)
+            {
+                account.Balance -= amount;
+                //loan.LoanAmount += amount;
                 _context.SaveChanges();
             }
         }

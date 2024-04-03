@@ -8,6 +8,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using System.Security.Claims;
 
 namespace BankSystem.WebApi.Controllers
@@ -69,23 +70,15 @@ namespace BankSystem.WebApi.Controllers
             return Ok(new { Message = "The account balance updated successfully." });
         }
 
-        //[HttpPut]
-        //[Route("{accountId:guid}/loan-payment")]
+        [HttpPut]
+        [Route("accountId/loan-payment")]
+        public async Task<IActionResult> LoanPayment(int accountId, decimal amount)
+        {
 
-        //[HttpPut("{accountId}/deposit-balance")]
-        //public async Task<IActionResult> DepositBalance(int accountId, [FromBody] TransactionModel model, decimal changeAmount)
-        //{
-        //    var result = _transactionValidator.Validate(model);
-        //    if (!result.IsValid)
-        //    {
-        //        return BadRequest(result.Errors);
-        //    }
+            _accountRepository.LoanPaymentAsync(accountId, amount);
+            return Ok(new { Message = "Loan payment succesfful." });
+        }
 
-        //    await _accountRepository.DepositBalanceAsync(accountId, changeAmount, this.User);
-
-        //    return Ok(new { Message = "Balance deposited successfully." });
-        //}
-        
     }
 
 }

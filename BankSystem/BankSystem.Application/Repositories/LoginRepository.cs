@@ -9,12 +9,10 @@ namespace BankSystem.Business.Repositories
     {
         private readonly BankingDbContext _context;
         private readonly JwtToken _token;
-        private readonly IMapper _mapper;
 
-        public LoginRepository(IMapper mapper, BankingDbContext context, JwtToken token)
+        public LoginRepository(BankingDbContext context, JwtToken token)
         {
             _context = context;
-            _mapper = mapper;
             _token = token;
         }
         public void AddLogin(LoginModel model)

@@ -1,60 +1,15 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.application\\repositories\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|solutionrelative:banksystem.application\\repositories\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.application\\repositories\\creditscorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|solutionrelative:banksystem.application\\repositories\\creditscorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E66B299E-262F-411B-824A-EAD3B6A4C0C6}|BankSystem.WebApi\\BankSystem.WebApi.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.webapi\\controllers\\loanapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E66B299E-262F-411B-824A-EAD3B6A4C0C6}|BankSystem.WebApi\\BankSystem.WebApi.csproj|solutionrelative:banksystem.webapi\\controllers\\loanapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.domain\\entities\\loanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|solutionrelative:banksystem.domain\\entities\\loanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.application\\dto\\loandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|solutionrelative:banksystem.application\\dto\\loandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.domain\\entities\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|solutionrelative:banksystem.domain\\entities\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.domain\\entities\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|solutionrelative:banksystem.domain\\entities\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAC673AF-48E9-4AD7-94F4-FFF9AAB5372E}|BankSystem.Persistence\\BankSystem.Persistence.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.persistence\\context\\bankingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAC673AF-48E9-4AD7-94F4-FFF9AAB5372E}|BankSystem.Persistence\\BankSystem.Persistence.csproj|solutionrelative:banksystem.persistence\\context\\bankingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.application\\repositories\\transactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|solutionrelative:banksystem.application\\repositories\\transactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.application\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3CC4A9-3ECE-4D83-A670-977FEE1AF198}|BankSystem.Application\\BankSystem.Business.csproj|solutionrelative:banksystem.application\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|d:\\github\\fimple.net-bootcamp-finalcase\\banksystem\\banksystem.domain\\entities\\loanapplicationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01398DD0-7F11-4789-A177-B67EDA404BD2}|BankSystem.Domain\\BankSystem.Data.csproj|solutionrelative:banksystem.domain\\entities\\loanapplicationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 230,
-          "SelectedChildIndex": 32,
+          "DockedWidth": 205,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -171,154 +126,11 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoanDto.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Dto\\LoanDto.cs",
-              "RelativeDocumentMoniker": "BankSystem.Application\\Dto\\LoanDto.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Dto\\LoanDto.cs",
-              "RelativeToolTip": "BankSystem.Application\\Dto\\LoanDto.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T19:39:17.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoanModel.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\LoanModel.cs",
-              "RelativeDocumentMoniker": "BankSystem.Domain\\Entities\\LoanModel.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\LoanModel.cs",
-              "RelativeToolTip": "BankSystem.Domain\\Entities\\LoanModel.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:57:46.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreditScoreRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\CreditScoreRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem.Application\\Repositories\\CreditScoreRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\CreditScoreRepository.cs",
-              "RelativeToolTip": "BankSystem.Application\\Repositories\\CreditScoreRepository.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAQwEMAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:34:42.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoanApplicationRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\LoanApplicationRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem.Application\\Repositories\\LoanApplicationRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\LoanApplicationRepository.cs",
-              "RelativeToolTip": "BankSystem.Application\\Repositories\\LoanApplicationRepository.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAQwFgAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T13:55:43.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoanApplicationsController.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\LoanApplicationsController.cs",
-              "RelativeDocumentMoniker": "BankSystem.WebApi\\Controllers\\LoanApplicationsController.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.WebApi\\Controllers\\LoanApplicationsController.cs",
-              "RelativeToolTip": "BankSystem.WebApi\\Controllers\\LoanApplicationsController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAzwCUAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:31:25.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\UserModel.cs",
-              "RelativeDocumentMoniker": "BankSystem.Domain\\Entities\\UserModel.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\UserModel.cs",
-              "RelativeToolTip": "BankSystem.Domain\\Entities\\UserModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:31:09.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AccountModel.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\AccountModel.cs",
-              "RelativeDocumentMoniker": "BankSystem.Domain\\Entities\\AccountModel.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\AccountModel.cs",
-              "RelativeToolTip": "BankSystem.Domain\\Entities\\AccountModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:51:18.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BankingDbContext.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\Context\\BankingDbContext.cs",
-              "RelativeDocumentMoniker": "BankSystem.Persistence\\Context\\BankingDbContext.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Persistence\\Context\\BankingDbContext.cs",
-              "RelativeToolTip": "BankSystem.Persistence\\Context\\BankingDbContext.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAzwCEAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:43:06.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TransactionRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\TransactionRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem.Application\\Repositories\\TransactionRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\TransactionRepository.cs",
-              "RelativeToolTip": "BankSystem.Application\\Repositories\\TransactionRepository.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAwCcAAABdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:46:40.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AccountRepository.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "RelativeDocumentMoniker": "BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "RelativeToolTip": "BankSystem.Application\\Repositories\\AccountRepository.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACcAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:28:07.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoanApplicationModel.cs",
-              "DocumentMoniker": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
-              "RelativeDocumentMoniker": "BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
-              "ToolTip": "D:\\github\\Fimple.Net-Bootcamp-FinalCase\\BankSystem\\BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
-              "RelativeToolTip": "BankSystem.Domain\\Entities\\LoanApplicationModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:31:10.683Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 200,
+          "DockedWidth": 186,
           "SelectedChildIndex": -1,
           "Children": [
             {
